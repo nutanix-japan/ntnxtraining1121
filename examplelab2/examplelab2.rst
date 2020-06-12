@@ -5,93 +5,48 @@
 Securing the Nutanix Cluster
 -------------
 
-Overview
+Adding a User
 ++++++++
 
-Here is where we provide a high level description of what the user will be doing during this module. We want to frame why this content is relevant to an SE/Services Consultant and what we expect them to understand after completing the lab.
+In this exercise you will work individually to add a local (i.e. non-domain) user account to your Nutanix cluster. This user will have permission to log on and perform cluster tasks based on the level of access granted to them.
 
-Using Notes
-+++++++++++
+1.  Log on to your cluster’s Prism UI if needed.
 
-Notes provide easily noticable interjections to lab instructions. Reasons to use a note include calling attention to a step that requires additional context or referencing external resources. Make sure to include a return before and after the note directive for it to render properly. **Please don't abuse notes.**
+2.  Click the **gear** icon and scroll down the **Settings** column and select **Local User Management**.
 
-.. note::
-
-  Check out `this <http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html>`_ cheat sheet for helpful documentation on formatting text, links, tables, etc. in Restructured Text.
-
-Using Icons
-+++++++++++
-
-The Prism UI includes several unlabeled icons. When directing a user to one of these actions or menus, use the example inline markup below:
-
-In **Prism**, click :fa:`cog` **> Manage VM High Availability**.
+3.  In the **Local User Management window**, click **+ New User**.
 
 .. figure:: images/1.png
+ 
+4.  Use the table below to complete the fields in the **Create User** window:
 
-Under **Disks**, select :fa:`pencil` to change the **CD-ROM** device configuration.
+Field: **Value**
+Username: **Your first name**
+Last Name: **Your last name**
+Email: **Your email address**
+Password: **Use your full name with first letter capitalized and add /4u, eg:  Johnsmith/4u**
+Language: **Your preferred language (e.g en-US)**
+Roles: **Cluster Admin (You may need to scroll down)**
 
-.. figure:: images/2.png
+5.  Click **Save**.
 
-Click :fa:`eject` to unmount the disk image from the **CD-ROM** device.
 
-It is **not** necessary to include inline icons when the are accompanied by a label/text in the UI, such as :fa:`times` **Delete**
+Verifying the New User Account
++++++++++++++++++++++++++++++++
 
-Using Codeblocks
-++++++++++++++++
+1.  Log out of the Prism interface by clicking the **Username** menu (next to the **gear** icon and is currently **admin**) and select **Sign Out**.
 
-You can insert code into your lab guides both inline and via external files. Inline is a great option for providing command line instructions or display shorter code snippets.
+2.  Log on to the Prism interface with the user account that you created in the previous exercise.
 
+3.  Observe your user account name (instead of admin) in the upper-right corner.
+
+4.  Click the **gear** icon, scroll down the **Settings** page and observe whether you can see and select **Local User Management**.
+• Are you able to administer new user accounts? 
+  
 .. note::
 
-  `Here <http://www.sphinx-doc.org/en/stable/markup/code.html>`_ is a reference for even more code options available in Sphinx, including emphasizing individual lines.
+  Note:  You should not be able to perform that action because the assigned Cluster Admin role does not have rights to administer user accounts.
 
-Inline
-......
+5.  Log out of Prism by clicking the Username menu and select Sign Out.
 
-Using an SSH client, execute the following:
 
-.. code-block:: bash
-  :name: inline-code-example
-  :caption: INLINE CODE EXAMPLE
-
-  > ssh nutanix@<NUTANIX-CLUSTER-IP>
-  > acli
-  <acropolis> vm.create XD num_vcpus=4 num_cores_per_vcpu=1 memory=8G
-  <acropolis> vm.disk_create XD cdrom=true empty=true
-  <acropolis> vm.disk_create XD clone_from_image=<Windows 2012 Disk Image Name>
-  <acropolis> vm.nic_create XD network=<Network Name> ip=<XD IP Address>
-  <acropolis> vm.on XD
-
-.. note:: When using **acli**, you can use the Tab key to autocomplete fields. Pressing Tab twice lists available namespaces and values.
-
-The name/caption arguments are optional, and should only be used is you need to reference the code from another part of the document, like this: :ref:`inline-code-example`
-
-External File
-.............
-
-Use the literalinclude directive to create a code block from an external file. The best option when dealing with longer scripts or the content of the script is maintained separate from the lab guide.
-
-.. literalinclude:: example.py
-   :language: python
-   :emphasize-lines: 2,7-8
-   :linenos:
-   :caption: EXAMPLE.PY
-   :name: literal-include-example
-
-.. note:: For proper color markup, specify the language of your code using one of the supported lexers found at `pygments.org <http://pygments.org/docs/lexers/>`_.
-
-Using Links
-+++++++++++
-
-Here is a link to a `Another Term <../appendix/glossary.html#another-term>`_ in the `Glossary <../appendix/glossary.html>`_. This approach doesn't require labels in your .rst files, but requires you to know the name of the file and anchor to which you are linking.
-
-Here is a link to `an external site <http://www.google.com>`_.
-
-You can also link directly to labels in your .rst files using the **ref** directive. This approach will automatically expand the name of the heading to which the label is applied. Here is an example of linking to :ref:`example_lab_1`.
-
-Takeaways
-+++++++++
-
-- Here is where we summarize any key takeaways from the module
-- Such as how a Nutanix feature used in the lab delivers value
-- Or highlighting a differentiator
