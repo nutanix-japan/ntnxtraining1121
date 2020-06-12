@@ -2,7 +2,7 @@
 .. _example_lab_3:
 
 -------------
-Networking
+Migrating Workloads with Nutanix Move
 -------------
 
 Overview
