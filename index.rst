@@ -6,8 +6,15 @@
   :name: _labs
   :hidden:
 
-  examplelab1/examplelab1
+  managecluster/managecluster
   examplelab2/examplelab2
+  examplelab3/examplelab3
+  examplelab4/examplelab4
+  examplelab5/examplelab5
+  examplelab6/examplelab6
+  examplelab7/examplelab7
+  examplelab8/examplelab8
+
 
 .. toctree::
   :maxdepth: 2
