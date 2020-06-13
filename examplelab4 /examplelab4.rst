@@ -1,143 +1,144 @@
 .. Adding labels to the beginning of your lab is helpful for linking to the lab from other pages
-.. _example_lab_3:
+.. _example_lab_4:
 
 -------------
-Health Monitoring and Alerts
+Virtual Machine Management
 -------------
 
-Overview
-++++++++
+Creating a Windows Virtual Machine
++++++++++++++++++++++++++++++++++++
 
-Here is where we provide a high level description of what the user will be doing during this module. We want to frame why this content is relevant to an SE/Services Consultant and what we expect them to understand after completing the lab.
+In this exercise you will create a Windows Server VM from a Windows installation ISO image.
 
-Creating a VM
-+++++++++++++
+AHV provides an **Image Service** feature allows you to build a store of imported files that you can use to create a CD-ROM from an ISO image or an operating system Disk from a disk image when creating a VM. The Image Service supports raw, vhd, vhdx, vmdk, vdi, iso, and qcow2 disk formats
 
-Example markup for creating a VM in Prism Element:
+  This exercise is composed of the following tasks:
 
-  In **Prism > VM > Table**, click **+ Create VM**.
+ * Build a Windows Virtual Machine
+ * Install a Windows Operating System
+ * Attach and install Nutanix Guest Tools
 
-  Fill out the following fields and click **Save**:
+.. Note:: 
+   You can explore available images and upload images under :fa:`cog` > **Image Configuration** in Prism Element
+    
+In order to provide high performance IO to VMs, AHV requires the installation of paravirtualized drivers into the guest (similar to VMware Tools). For Windows guests specifically, these drivers must be loaded during installation in order for the VM’s disk to be accessible by the Windows installer.
 
-  - **Name** - Xtract-VM
-  - **Description** - Xtract for VMs
-  - **vCPU(s)** - 2
-  - **Number of Cores per vCPU** - 2
-  - **Memory** - 4 GiB
-  - Select **+ Add New Disk**
+Nutanix validates and distributes these drivers via http://portal.nutanix.com. The ISO image containing the drivers has already been uploaded to the Image Service.
 
+Task 1: Building a Windows Virtual Machine
+.............................................
+
+1.  In **Prism Element** > **VM** > **Tabl**e, click + **Create VM**.
+
+2.  Fill out the following fields and click **Save**:
+
+Leave other settings at their default values.
+
+ * **Name** - Initials-Windows_VM
+ * **Description**-(Optional) Description for your VM.
+ * **vCPU(s)** - 2
+ * **Number of Cores per vCPU** - 1
+ * **Memory** - 4 GiB
+ * Select   next to CDROM
+    - O**peration** - Clone from Image Service
+    - **Image** – Virt IO
+    - Select **Update**
+
+This will mount the Windows Server ISO from the Image Service for boot/installation
+ * **Select** + **Add New** Disk
+    - **Type** - DISK
+    - **Operation** – Clone from Image Service
+    - **Image** – Windows 2012
+    - Select **Add**
+
+This will add a disk containing the Windows boot media.
+
+ * **Select Add New NIC**
+    - VLAN Name – **Unmanaged Client**
+    - Select **Add**
+
+This will add a single virtual NIC to the VM on the selected Virtual  Network
+
+3.  Click **Save** to create the VM.
+ 
+.. Note:: 
+  At the following URL you can find the supported Operating Systems: https://portal.nutanix.com/page/documents/compatibility-matrix/guestos
+
+ 
+4.  Select the VM, then click **Power On** from the list of action links (below the table) to turn on the VM.
+
+ 
+5.  Select the VM, then click **Launch Console** from the **Actions** drop-down menu to access an HTML5 console to interact with the VM.
+
+6.  When prompted the enter the password for the Administrator, please enter password as **Nutanix/4u**
+
+   .. figure:: images/1.png
+
+   .. figure:: images/2.png
+
+7.  Following OS installation you can complete the Nutanix Guest Tools (NGT) installation by selecting the VM in Prism and clicking Manage Guest Tools > Enable Nutanix Guest Tools > Mount Guest Tools,and clicking Submit. 
+This will use the virtual CD-ROM device to mount the NGT installation ISO to the VM. NGT includes the previously installed VirtIO drivers, as well as services to support Self-Service File Restore (SSR) and Application Consistent (VSS) snapshots.
+ 
+   .. figure:: images/3.png
+
+8.  Return to the VM console to complete the NGT installation by clicking on the Nutanix Guest Tools CD and follow through the installation wizard.
+
+   .. figure:: images/4.png
+ 
+        Congrats! You have successfully deployed a Windows VM!
+
+  Creating a Linux Virtual Machine
++++++++++++++++++++++++++++++++++++
+In this exercise you will create a CentOS VM from an existing, pre-installed disk image in the Image Service. It is common in many environments to have “template” style images of pre-installed operating systems. Similar to the previous exercise, the disk image has already been uploaded to the Image Service.
+
+1.  In **Prism Element** > **VM** > **Table**, click **+ Create VM**.
+
+2.  Fill out the following field and click **Save**:
+
+ * **Name** - Initials-Linux_VM
+ * **Description** - (Optional) Description for your VM.
+ * vCPU(s) - 2
+ * **Number of Cores per vCPU** - 1
+ * **Memory** - 4 GiB
+ * Select **+ Add New Disk**
+    - **Type** – Disk
     - **Operation** - Clone from Image Service
-    - **Image** - Xtract-VM
+    - **Image** – CentOS
     - Select **Add**
-  - Remove **CD-ROM** Disk
-  - Select **Add New NIC**
-
-    - **VLAN Name** - Primary
-    - **IP Address** - *10.21.XX.42*
+    - Boot Configuration
+    - Leave the default selected **Legacy Boot**
+ * Select **Add New NIC**
+    - **VLAN Name** - Unmanaged
     - Select **Add**
-
-  Select the **Xtract-VM** VM and click **Power on**.
-
-  Once the VM has started, click **Launch Console**.
-
-Example markup for creating a VM in Prism Central:
-
-  In **Prism Central > Explore > VMs**, click **Create VM**.
-
-  Fill out the following fields and click **Save**:
-
-  - **Name** - Xtract-VM
-  - **Description** - Xtract for VMs
-  - **vCPU(s)** - 2
-  - **Number of Cores per vCPU** - 2
-  - **Memory** - 4 GiB
-  - Select **+ Add New Disk**
-
-    - **Operation** - Clone from Image Service
-    - **Image** - Xtract-VM
-    - Select **Add**
-  - Remove **CD-ROM** Disk
-  - Select **Add New NIC**
-
-    - **VLAN Name** - Primary
-    - **IP Address** - *10.21.XX.42*
-    - Select **Add**
-
-  Select the **Xtract-VM** VM and click **Actions > Power on**.
-
-  Once the VM has started, click **Actions > Launch console**.
-
-Example markup for creating a Service in Calm:
-
-  In **Application Overview > Services**, click :fa:`plus-circle`.
-
-  Note **Service1** appears in the **Workspace** and the **Configuration Pane** reflects the configuration of the selected Service. You can rearrange the Service icons on the Workspace by clicking and dragging them.
-
-  Fill out the following fields:
-
-  - **Service Name** - APACHE_PHP
-  - **Name** - APACHE_PHP_AHV
-  - **Cloud** - Nutanix
-  - **OS** - Linux
-  - **VM Name** - APACHE_PHP
-  - **Image** - CentOS
-  - **Device Type** - Disk
-  - **Device Bus** - SCSI
-  - Select **Bootable**
-  - **vCPUs** - 2
-  - **Cores per vCPU** - 1
-  - **Memory (GiB)** - 4
-  - Select :fa:`plus-circle` under **Network Adapters (NICs)**
-  - **NIC** - Secondary
-  - **Crendential** - CENTOS
-
-  Scroll to the top of the **Configuration Panel**, click **Package**.
-
-  Fill out the following fields:
-
-  - **Name** - APACHE_PHP_PACKAGE
-  - **Install Script Type** - Shell
-  - **Credential** - CENTOS
-
-  Copy and paste the following script into the **Install Script** field:
-
+3.  Click **Save** to create the VM.
+4.  Launch the console to see the VM being started.
+5.  Login with root and the credentials provided in the Cluster General Information site.
+6.  Shutdown CentOS by typing the following:
+     
   .. code-block:: bash
 
-     #!/bin/bash
-     set -ex
-     # -*- Install httpd and php
-     sudo yum update -y
-     sudo yum -y install epel-release
-     sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-     sudo yum install -y httpd php56w php56w-mysql
+     init 0
 
-     echo "<IfModule mod_dir.c>
-             DirectoryIndex index.php index.html index.cgi index.pl index.php index.xhtml index.htm
-     </IfModule>" | sudo tee /etc/httpd/conf.modules.d/dir.conf
+7.  Close the **VM console** window.
+  
+Updating CPU and Memory
+....................
 
-     echo "<?php
-     phpinfo();
-     ?>" | sudo tee /var/www/html/info.php
-     sudo systemctl restart httpd
-     sudo systemctl enable httpd
+**Individual Exercise**
 
-  Fill out the following fields:
+In this task, you will add a CPU and increase the amount of Memory on your Windows VM.
 
-  - **Uninstall Script Type** - Shell
-  - **Credential** - CENTOS
+1.  From the Prism **VM** dashboard, click to select the **Windows-<your initials>** VM and in the links below the **VM** table, click **Update**.
+2.  In the **Update VM** dialog box, under **Compute Details**, increase the VCPU(S) from **2** to **4** and the Memory from **4** to **8**.
+3.  Click **Save**.
+4.  This should result in an update error. Dynamic bulk updates to a VM are not allowed.
+ 
+   .. figure:: images/5.png
 
-  Copy and paste the following script into the **Uninstall Script** field:
-
-  .. code-block:: bash
-
-    #!/bin/bash
-    echo "Goodbye!"
-
-  Click **Save**.
-
-Takeaways
-+++++++++
-
-- Here is where we summarize any key takeaways from the module
-- Such as how a Nutanix feature used in the lab delivers value
-- Or highlighting a differentiator
+5.  Modify one component at a time. Click **Update** once again for your **Windows-<your initials>** VM and in the **Update VM** dialog box, under **Computer Details**, increase the VCPU(S) from **2** to **4**.
+6.  Click **Save**.
+7.  Observe the change in the VM Dashboard for your VM. The Core column will change from **2** to **4** (two VCPUs with two cores each).
+8.  Repeat the update process and change the Memory from **4** to **8**.
+irst bridge  (br0)?
+ 
+ 

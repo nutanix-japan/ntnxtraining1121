@@ -5,139 +5,85 @@
 Networking
 -------------
 
-Overview
-++++++++
+Creating an Unmanaged Client Network
+++++++++++++++++++++++++++++++++++++
 
-Here is where we provide a high level description of what the user will be doing during this module. We want to frame why this content is relevant to an SE/Services Consultant and what we expect them to understand after completing the lab.
+In this exercise you will create an unmanaged network.
 
-Creating a VM
-+++++++++++++
+1.	Log on to your cluster’s Prism UI (Element) as the **admin** user.
 
-Example markup for creating a VM in Prism Element:
+2.	Click the **gear** icon, scroll down in **Settings** to the **Network** section and click **Network Configuration**.
 
-  In **Prism > VM > Table**, click **+ Create VM**.
+3.	Click **Virtual Networks** if not already selected.
 
-  Fill out the following fields and click **Save**:
+   .. figure:: images/1.png
+ 
+4.	Click **Create Network**
 
-  - **Name** - Xtract-VM
-  - **Description** - Xtract for VMs
-  - **vCPU(s)** - 2
-  - **Number of Cores per vCPU** - 2
-  - **Memory** - 4 GiB
-  - Select **+ Add New Disk**
+5.	Fill out the **Create Network** dialog box as follows:
 
-    - **Operation** - Clone from Image Service
-    - **Image** - Xtract-VM
-    - Select **Add**
-  - Remove **CD-ROM** Disk
-  - Select **Add New NIC**
+ * Name: **Unmanaged Client Network**
 
-    - **VLAN Name** - Primary
-    - **IP Address** - *10.21.XX.42*
-    - Select **Add**
+ * VLAN ID: **<Refer to Cluster Configuration Information>**
 
-  Select the **Xtract-VM** VM and click **Power on**.
+ * Enable IP address Management: **Leave unchecked**
 
-  Once the VM has started, click **Launch Console**.
+6.	Click **Save** to create the network.
 
-Example markup for creating a VM in Prism Central:
+Creating a Managed Client Network
+++++++++++++++++++++++++++++++++++++
+In this exercise you will create an IP address management (IPAM) or managed network.
 
-  In **Prism Central > Explore > VMs**, click **Create VM**.
+1.	Click **+ Create Network**.
 
-  Fill out the following fields and click **Save**:
+2.	Use the information in the table below to complete the Create Network dialog box:
 
-  - **Name** - Xtract-VM
-  - **Description** - Xtract for VMs
-  - **vCPU(s)** - 2
-  - **Number of Cores per vCPU** - 2
-  - **Memory** - 4 GiB
-  - Select **+ Add New Disk**
+ * Name: **Managed Client Network**
+ * VLAN ID: **0 (zero)**
+ * Enable IP Address Management: **Click the check box to enable**.
+ * Network IP Address/Prefix Length: Refer to Cluster General Information
+ * Gateway IP Address: Refer to Cluster General Information
+ * Configure Domain Settings: **Uncheck the box**
 
-    - **Operation** - Clone from Image Service
-    - **Image** - Xtract-VM
-    - Select **Add**
-  - Remove **CD-ROM** Disk
-  - Select **Add New NIC**
+3.	Scroll down and click **+ Create Poo**l.
+4.	Fill out the **Add IP Pool** dialog box with the IP pool **Start Address** and **End Address** refer to the pool address range from the **Cluster Configuration Guide**.
 
-    - **VLAN Name** - Primary
-    - **IP Address** - *10.21.XX.42*
-    - Select **Add**
+   .. figure:: images/2.png
+ 
+5.	Click **Submit**, then click **Save**.
+6.	Verify you now have an **Unmanaged Client Network** and a **Managed Client Network** in the **Network Configuration** dialog box.
 
-  Select the **Xtract-VM** VM and click **Actions > Power on**.
+   .. figure:: images/3.png
+ 
+Managing Open vSwitch (OVS)
+++++++++++++++++++++++++++++++++++++
 
-  Once the VM has started, click **Actions > Launch console**.
+In this exercise you will explore a few commands to manage Open vSwitch (OVS) from the CVM and use those commands to build an additional virtual switch.
 
-Example markup for creating a Service in Calm:
+1.	Using PuTTY, establish an SSH connection to one of your CVMs and log on with the **nutanix** user and password **(Refer to Cluster Configuration Guide)**.
 
-  In **Application Overview > Services**, click :fa:`plus-circle`.
-
-  Note **Service1** appears in the **Workspace** and the **Configuration Pane** reflects the configuration of the selected Service. You can rearrange the Service icons on the Workspace by clicking and dragging them.
-
-  Fill out the following fields:
-
-  - **Service Name** - APACHE_PHP
-  - **Name** - APACHE_PHP_AHV
-  - **Cloud** - Nutanix
-  - **OS** - Linux
-  - **VM Name** - APACHE_PHP
-  - **Image** - CentOS
-  - **Device Type** - Disk
-  - **Device Bus** - SCSI
-  - Select **Bootable**
-  - **vCPUs** - 2
-  - **Cores per vCPU** - 1
-  - **Memory (GiB)** - 4
-  - Select :fa:`plus-circle` under **Network Adapters (NICs)**
-  - **NIC** - Secondary
-  - **Crendential** - CENTOS
-
-  Scroll to the top of the **Configuration Panel**, click **Package**.
-
-  Fill out the following fields:
-
-  - **Name** - APACHE_PHP_PACKAGE
-  - **Install Script Type** - Shell
-  - **Credential** - CENTOS
-
-  Copy and paste the following script into the **Install Script** field:
+2.	Use **allssh** to execute commands on all CVMs. To view network interface information, type the command:
 
   .. code-block:: bash
 
-     #!/bin/bash
-     set -ex
-     # -*- Install httpd and php
-     sudo yum update -y
-     sudo yum -y install epel-release
-     sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-     sudo yum install -y httpd php56w php56w-mysql
+     allssh manage_ovs show_interfaces
+ 
+ * How many network interfaces are on each node?
+ * How many network interfaces are 10GbE?
+ * How many network interfaces are 1GbE?
 
-     echo "<IfModule mod_dir.c>
-             DirectoryIndex index.php index.html index.cgi index.pl index.php index.xhtml index.htm
-     </IfModule>" | sudo tee /etc/httpd/conf.modules.d/dir.conf
-
-     echo "<?php
-     phpinfo();
-     ?>" | sudo tee /var/www/html/info.php
-     sudo systemctl restart httpd
-     sudo systemctl enable httpd
-
-  Fill out the following fields:
-
-  - **Uninstall Script Type** - Shell
-  - **Credential** - CENTOS
-
-  Copy and paste the following script into the **Uninstall Script** field:
+3.	To list existing bridges for each Nutanix node in the cluster, type the command:
 
   .. code-block:: bash
 
-    #!/bin/bash
-    echo "Goodbye!"
+     allssh manage_ovs show_bridges
 
-  Click **Save**.
+ * How many bridges are on each node?
 
-Takeaways
-+++++++++
+4.	To show bridge uplinks for each Nutanix node in the cluster, type the command:
 
-- Here is where we summarize any key takeaways from the module
-- Such as how a Nutanix feature used in the lab delivers value
-- Or highlighting a differentiator
+  .. code-block:: bash
+
+    allssh manage_ovs show_uplinks
+
+ * Which network interfaces are on bond (or port) br0-up of the f

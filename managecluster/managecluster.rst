@@ -6,7 +6,7 @@ Managing the Nutanix Cluster
 -------------
 
 Conducting Prism Element initial setup
-++++++++
+++++++++++++++++++++++++++++
 
 Open a browser on your VDI session and enter the IP for your Cluster External IP Address shown in your lab guide. This is a floating IP that will run on one of your cluster CVMs. A **Security** page will be displayed, click **Advanced**, then click **Proceed to <IP> (unsafe)**
 
@@ -17,17 +17,17 @@ You should now see the **Prism Home** page.
 Configuring an NTP Server
 ++++++++++++++++++++++
 
-#.	Click the **gear** icon in the upper right corner of the browser window, scroll down the **Settings** list displayed on the left side and select **NTP Servers**.
+1.	Click the **gear** icon in the upper right corner of the browser window, scroll down the **Settings** list displayed on the left side and select **NTP Servers**.
 
 .. figure:: images/2.png
  
-#.	In the NTP Servers dialog box, review if there is any NTP server that has been added. Click + Add. 
+2.	In the NTP Servers dialog box, review if there is any NTP server that has been added. Click + Add. 
  
  	
 .. Note::  
   You should see **0.pool.ntp.org** under the HOSTNAME OR IP ADDRESS. 
 
-#.	Verify the NTP configuration using nCLI.
+3.	Verify the NTP configuration using nCLI.
 
 a.	Open the PuTTY utility on your virtual desktop.
 
@@ -47,55 +47,56 @@ Using Nutanix Interfaces
 
 In this exercise you will familiarise yourself with primary Nutanix interfaces such as Prism Element and nCLI.
 
-#.	From the Prism UI, in the upper right corner, click the **User** drop down menu (it will be labeled with the currently logged-in user “admin”) and select **About Nutanix**.
+1.	From the Prism UI, in the upper right corner, click the **User** drop down menu (it will be labeled with the currently logged-in user “admin”) and select **About Nutanix**.
 
 .. figure:: images/3.png
  
 Which version of Acropolis (AOS) are you running?
 What is the license type on your cluster?
 
-#.	Click **Close** to close the dialog box.
+2.	Click **Close** to close the dialog box.
 
 #.	At the upper-right, click the question mark (?). From the drop down menu, click **Health Tutorial**. This loads the **Health** Dashboard and starts a **Welcome to Health Page** dialog box, click **Next**. After the simulation loads, click **Next** through the tutorial to view the Health Dashboard features.
 
 .. figure:: images/4.png
  
-#.	When completed, click **OK, got it!** to exit the simulation.
+3.	When completed, click **OK, got it!** to exit the simulation.
 
-#.	Click the **dashboard** drop down menu (currently labeled **Health**). This drop down menu will show of all the dashboards. Select the **VM** dashboard.
+4.	Click the **dashboard** drop down menu (currently labeled **Health**). This drop down menu will show of all the dashboards. Select the **VM** dashboard.
 
 .. figure:: images/5.png
  
-From the **Overview** page, locate the **VM Summary** at the middle left. How many virtual machines are shown?
+  From the **Overview** page, locate the **VM Summary** at the middle left. How many virtual machines are shown?
 
-#.	In the upper-left corner of the browser window, click **Table**.
+5.	In the upper-left corner of the browser window, click **Table**.
 
 .. figure:: images/6.png
  
 Are any VMs listed? If so, what VMs are they? If not, why not? 
 
-#.	At the upper-middle-right of the **VM Dashboard** page, click to select the **Include Controller VMs** check box and answer the following questions:
+6.	At the upper-middle-right of the **VM Dashboard** page, click to select the **Include Controller VMs** check box and answer the following questions:
 
 .. figure:: images/7.png
  
-How many cores are allocated to each CVM?
-How much memory is allocated to each CVM?
+  How many cores are allocated to each CVM?
 
-#.	Click the gear icon, scroll through the Settings on the left, select SSL Certificate, and complete the table below:
+  How much memory is allocated to each CVM?
+
+7.	Click the **gear** icon, scroll through the Settings on the left, select SSL Certificate, and complete the table below:
 
 Key Type:
 Signing Algorithm:
 
-#.	Click the magnifying glass found at the top right of the Prism window.
+8.	Click the magnifying glass found at the top right of the Prism window.
 
-#.	Type the letter a in the search bar and click acknowledge alerts. You are automatically redirected to the Alerts dashboard.
+9.	Type the letter a in the search bar and click acknowledge alerts. You are automatically redirected to the Alerts dashboard.
 
 .. figure:: images/8.png
  
-#.	Moving the mouse cursor to any alert listed under the **Title** column reveals a hyperlink. Select any alert hyperlink. This switches you to the page dedicated to that alert.
+10.	Moving the mouse cursor to any alert listed under the **Title** column reveals a hyperlink. Select any alert hyperlink. This switches you to the page dedicated to that alert.
 Click **Acknowledge** at the upper-right of the page. This logs that the alert has been seen. In the left column, the **Status** should show **Acknowledged**. Select the **X** at the upper-right (immediately to the right of Acknowledge) to close the page.
 
-#.	Select the same alert you selected in the previous step and click **Resolve**.
+11.	Select the same alert you selected in the previous step and click **Resolve**.
 The **Status** changes to **Resolved**. Alerts which have been resolved do not display by default on the **Alerts** dashboard. Click the **X** once again to exit the page. The alert should no longer be displayed in the list of Alerts.
 
 Exploring Prism Views
@@ -103,26 +104,27 @@ Exploring Prism Views
 
 In this exercise you will explore various views in Prism.
 
-#.	Click the **dashboard** drop down menu and select each of the dashboards in turn. Note which dashboards have a **Table** view, an **Overview** view, and/or a **Diagram** view.
+1.	Click the **dashboard** drop down menu and select each of the dashboards in turn. Note which dashboards have a **Table** view, an **Overview** view, and/or a **Diagram** view.
 	
 .. Note::  
 
   The last dashboard selected will be represented on the top bar of the UI.
 
+
  .. figure:: images/9.png
 
-#.	Explore the features available under the **Settings** page (**gear** icon) and answer the following questions:
+2.	Explore the features available under the **Settings** page (**gear** icon) and answer the following questions:
 What is current and maximum setting for **Session Timeout for Current User (UI Settings)**?
 
 What is the IP of the current name server (Name Servers)?
 
-#.	Click the cluster name at the top-left corner of the UI and review the **Cluster Details** window.
+3.	Click the cluster name at the top-left corner of the UI and review the **Cluster Details** window.
 
-#.	Explore the functions available under the **User** menu (it will be labeled with the currently logged-in user, **admin**). The several **Download** selections open new tabs in your browser and require internet access.
+4.	Explore the functions available under the **User** menu (it will be labeled with the currently logged-in user, **admin**). The several **Download** selections open new tabs in your browser and require internet access.
 
  .. figure:: images/10.png
  
-#.	Now that you are familiar with the Prism management interface, return to the **Home** dashboard by clicking on the Nutanix logo (“**X**”) or by selecting **Home** from the **dashboard** menu.
+5.	Now that you are familiar with the Prism management interface, return to the **Home** dashboard by clicking on the Nutanix logo (“**X**”) or by selecting **Home** from the **dashboard** menu.
 
  .. figure:: images/11.png
  
@@ -139,11 +141,12 @@ In this exercise you will learn the Nutanix Command Line Interface (nCLI):
 •	Use nCLI to Build a Storage Container
 
  Task 1: Accessing nCLI and Using Basic Commands
- .................................................
+.................................................
 
 In this task you will access the nCLI shell and perform basic commands.
 
 1.	In the PuTTY Host Name (or IP address) field, type the IP Address of the any CVM from your Cluster General Information site. (Refer to Cluster Configuration Guide for the credentials detail.)
+
 2.	From the command prompt, type ncli to enter the nCLI shell.
  
  .. figure:: images/12.png
@@ -153,75 +156,94 @@ In this task you will access the nCLI shell and perform basic commands.
 4.	To display help for the datastore entity, type the command: 
  
 .. code-block:: putty
+
    <ncli> datastore help
 
 
 5.	To get help on the container entity, type the command:
 
 .. code-block:: putty
+
    <ncli> container help
 
-What command do you enter to get nCLI help for user accounts? 
-What command do you enter to list user accounts?
+   What command do you enter to get nCLI help for user accounts? 
 
+   What command do you enter to list user accounts?
+
+ 
  Task 2: Extracting Information
- ...............................
+.................................................
 
 
 In this task you will use the nCLI shell to answer the following questions.
+
 1.	Type storagepool list. How many storage pools does the cluster have? 
 
 2.	Type the command that lists all the storage containers in the cluster. How many storage containers does the cluster have? 
 
 3.	Refer to the storage container named **default-container-#####** and answer the following questions:
-o	How much free space is available in the storage container?
-o	How much space has been used in the storage container?
-o	What is the compression setting?
+
+   How much free space is available in the storage container?
+
+   How much space has been used in the storage container?
+
+   What is the compression setting?
 
 4.	Find and use the command to list all virtual machines in the cluster. How many virtual machines are there in the cluster? Does this include or exclude CVMs?
 
 5.	Type cluster info to display cluster information. Answer the following questions:
 What AOS software version is running on the cluster? (Compare the output from the cluster version command.)
-o	How many nodes and blocks are in the cluster?
-o	What is the cluster time zone?
+   
+  How many nodes and blocks are in the cluster?
+
+  What is the cluster time zone?
 
 6.	Type **exit** to leave the **nCLI** shell and return to the **Bash** shell.
 
 7.	You can combine Bash shell commands and nCLI commands to filter and format nCLI output. For example, to count the number of SSDs in the cluster, type the command:
 
 .. code-block:: ncli
+
   ncli disk list | grep SSD | wc -l 
 	
-..Note::
+.. Note::
+
   The final character in the above command is the letter “l” (lowercase “L”).
 
-o	How many SSDs are in the cluster?
-o	How many HDDs are in the cluster?
+  How many SSDs are in the cluster?
+  How many HDDs are in the cluster?
 
 8.	In the Prism UI, confirm your findings by switching to the Hardware dashboard, clicking the Table tab, then clicking the Disk button. Review the Tier column to confirm.
 
  Task 3: Using nCLI to Build a Storage Container
-  ...............................................
+.................................................
 
 
 In this task you will create and delete a storage container using nCLI.
+
 1.	In your PuTTY connection to one of your CVMs, type ncli to enter the nCLI shell.
+
 2.	To get help with the container create command, type:
 
 .. code-block:: ncli
+
   <ncli> container create help
 
 3.	The name of the storage pool is a required argument to the container create command. Get the unique name of the default storage pool by typing the following command:
 
+
 .. code-block:: ncli
+
   <ncli> storagepool list
 
 4.	Create a container named **cli-container-<lastname>** by typing the following command:
 
 .. code-block:: ncli
+
   <ncli> container create name=cli-lastname sp-name=default-storage-pool-#####
 
-..Note::  
+.. Note::  
+
   Where ##### is the cluster ID based on what you discovered in the previous step. <lastname> is your surname.
 
 5.	From the Prism UI, click the **Dashboard** menu and go to **Storage > Table > Storage Container** to confirm the container is created.
@@ -236,6 +258,7 @@ In this task you will create and delete a storage container using nCLI.
 10.	Verify that your container has been deleted:
 
 .. code-block:: ncli
-<ncli> container list 
+
+  <ncli> container list 
 
 
