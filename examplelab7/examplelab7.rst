@@ -1,97 +1,136 @@
 .. Adding labels to the beginning of your lab is helpful for linking to the lab from other pages
-.. _example_lab_2:
+.. _example_lab_7:
 
 -------------
-Securing the Nutanix Cluster
+Migrating Workloads with Nutanix Move
 -------------
 
-Overview
-++++++++
+Setting up a Move VM
++++++++++++++++++++++
+In this exercise, you will work towards deploying Nutanix Move VM on a Nutanix AHV cluster. 
 
-Here is where we provide a high level description of what the user will be doing during this module. We want to frame why this content is relevant to an SE/Services Consultant and what we expect them to understand after completing the lab.
+  .. NOTE::
+     Since you are in a shared resource, Move could be already been setup by the time you reached this exercise, if this is so, please reviewed the steps below and proceed to **Configuring a Migration Plan** .)
 
-Using Notes
-+++++++++++
-
-Notes provide easily noticable interjections to lab instructions. Reasons to use a note include calling attention to a step that requires additional context or referencing external resources. Make sure to include a return before and after the note directive for it to render properly. **Please don't abuse notes.**
-
-.. note::
-
-  Check out `this <http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html>`_ cheat sheet for helpful documentation on formatting text, links, tables, etc. in Restructured Text.
-
-Using Icons
-+++++++++++
-
-The Prism UI includes several unlabeled icons. When directing a user to one of these actions or menus, use the example inline markup below:
-
-In **Prism**, click :fa:`cog` **> Manage VM High Availability**.
-
+1.  In your Prism Element UI, identify the IP address of the Move VM.
+2.  Open a new tab in your browser and enter the IP of your **Move** VM.
+3.  Select the **I have read and agreed to terms and conditions** check box and click **Continue**.
+ 
 .. figure:: images/1.png
 
-Under **Disks**, select :fa:`pencil` to change the **CD-ROM** device configuration.
+4.  Click **OK** in the **Customer Experience Program** popup window.
+5.  Set a new password for the **nutanix** user. Set the password as **Nutanix/4u** with the CAP letter N).
+6.  Log on using the new user and password.
+7.  In the Move Supports dialog bog, click Continue.
 
 .. figure:: images/2.png
+ 
+Configuring Move
++++++++++++++++++
 
-Click :fa:`eject` to unmount the disk image from the **CD-ROM** device.
+1.  The **Move** dashboard displays **Source Environments**, **Target Environments** and **Migration Plans**.
+2.  On the upper left side of the Move UI, click **+ Add Source**.
+3.  In the **Add Source Environment** dialog box, select **VMware ESXi**.
 
-It is **not** necessary to include inline icons when the are accompanied by a label/text in the UI, such as :fa:`times` **Delete**
+.. figure:: images/3.png
+ 
+4.  Enter the following values into the respective fields:
+o Source Name: **VMWare vCenter**
+o Environment Name: **Source**
+o vCenter Server: **<vCenter IP Address> See Cluster Configuration Guide**
+o vCenter Password: **See Cluster Configuration Guide**
 
-Using Codeblocks
-++++++++++++++++
+.. figure:: images/4.png
+ 
+a.  Click **Add**.
+5.  In the new **SOURCE** box, click the **ellipse (…)** in the upper right corner and in the presented menu, choose **Refresh**. This will initiate a query to update Move with the latest changes in vCenter.
 
-You can insert code into your lab guides both inline and via external files. Inline is a great option for providing command line instructions or display shorter code snippets.
+.. figure:: images/5.png
+ 
+6.  In the left panel, click **+ Add Target** and enter the following values:
 
-.. note::
+Target Name: **<your cluster name>**
+Nutanix Environment: **<cluster external IP address> See Cluster Configuration Guide**
+User Name: **admin**
+Password: **See Cluster Configuration Guide
+**
+a. Click **Add**.
 
-  `Here <http://www.sphinx-doc.org/en/stable/markup/code.html>`_ is a reference for even more code options available in Sphinx, including emphasizing individual lines.
+.. figure:: images/6.png
+ 
+7.  In the new **Target <your cluster name>** card, click the **ellipsis (…)** in the upper right corner and in the presented menu choose **Refresh**. This will initiate a query to update Move with the latest changes in your Nutanix target cluster.
 
-Inline
-......
+Configuring a Migration Plan 
+++++++++++++++++++++++++++++
 
-Using an SSH client, execute the following:
+In this exercise, you will create a migration plan and initiate the migration.
 
-.. code-block:: bash
-  :name: inline-code-example
-  :caption: INLINE CODE EXAMPLE
+   .. NOTE::
+   In this part of the exercise, you are to create a migration plan and initiate the migration of virtual machines which are located in the ESXi SOURCE to the TARGET Cluster you are currently working on. There are already pre-created VMs mapping to your User Account name of your VDI session. The target machines you are to migrate should corresponding to you VDI User  Account name. e.g Win2012-PHX-POC037-User01, Window2012-PHX-POC37-User02 etc 
 
-  > ssh nutanix@<NUTANIX-CLUSTER-IP>
-  > acli
-  <acropolis> vm.create XD num_vcpus=4 num_cores_per_vcpu=1 memory=8G
-  <acropolis> vm.disk_create XD cdrom=true empty=true
-  <acropolis> vm.disk_create XD clone_from_image=<Windows 2012 Disk Image Name>
-  <acropolis> vm.nic_create XD network=<Network Name> ip=<XD IP Address>
-  <acropolis> vm.on XD
+1.  Click **+ New Migration Plan** on the top right side of your screen to create a new migration plan.
 
-.. note:: When using **acli**, you can use the Tab key to autocomplete fields. Pressing Tab twice lists available namespaces and values.
+2.  Enter Plan Name as: Migration Plan <your initials>
 
-The name/caption arguments are optional, and should only be used is you need to reference the code from another part of the document, like this: :ref:`inline-code-example`
+.. figure:: images/7.png
+ 
+3.  Click **Proceed**.
 
-External File
-.............
+4.  In the source target, select **SOURCE – VMWare vCenter** as the source of your migration.
 
-Use the literalinclude directive to create a code block from an external file. The best option when dealing with longer scripts or the content of the script is maintained separate from the lab guide.
+.. figure:: images/8.png
+ 
+5.  In the target, select **Target-<your cluster name>** as the destination of the migration.
 
-.. literalinclude:: example.py
-   :language: python
-   :emphasize-lines: 2,7-8
-   :linenos:
-   :caption: EXAMPLE.PY
-   :name: literal-include-example
+6.  Select **default-container-#########** as your target container and click **NEXT** to proceed.
 
-.. note:: For proper color markup, specify the language of your code using one of the supported lexers found at `pygments.org <http://pygments.org/docs/lexers/>`_.
+.. figure:: images/9.png
+ 
+7.  In **Select VMs** in step2 of the migration plan, please click on the + symbol beside the machine of your VDI User Name（eg: PHX-POC043-User01）. On the right side of the screen, the selected source VM will appear in your screen. 
 
-Using Links
-+++++++++++
+.. figure:: images/10.png
+ 
+8.  Click **Next** to proceed to Network Configuration.
 
-Here is a link to a `Another Term <../appendix/glossary.html#another-term>`_ in the `Glossary <../appendix/glossary.html>`_. This approach doesn't require labels in your .rst files, but requires you to know the name of the file and anchor to which you are linking.
+9.  Select Unmanaged Client as the Target Network and leave Test Network (optional) as default and click NEXT to proceed.
 
-Here is a link to `an external site <http://www.google.com>`_.
+.. figure:: images/11.png
+ 
+10. In **VM Preparation** step, key in the following parameters:
 
-You can also link directly to labels in your .rst files using the **ref** directive. This approach will automatically expand the name of the heading to which the label is applied. Here is an example of linking to :ref:`example_lab_1`.
+ * Preparation Mode: **Automatic**
+ * Credentials for Source VMs:  Under Windows VMs key in the **User Name** and **Password** (refer to Cluster Configuration Guide)
+ * Override Individual VM Settings: **Leave as default**
+ * TimeZone: **Leave as Default**
+ * Retain MAC Addresses from the Source VMs: **Ensure box is UNCHECKED**
+ * **Btpass Guest Operations on Source VMs: Ensure box is UNCHECKED**
+ * Manage Settings for Individual VMs: Leave as Default
+ * Schedule Data Seeding: **Ensure box is UNCHECKED**
+  
+Click **NEXT**.
 
-Takeaways
-+++++++++
+11. Review your final settings in **Summary** page, and click **Save** and Start to proceed with the migration. 
 
-- Here is where we summarize any key takeaways from the module
-- Such as how a Nutanix feature used in the lab delivers value
-- Or highlighting a differentiator
+12. Under **Migration Plans** page, you will be able to monitor the migration progress:
+
+.. figure:: images/12.png
+ 
+13. Click on **In Progress** and to see the migration in detailed.
+
+.. figure:: images/13.png
+ 
+14. Once the status bar has hit 100%, and display the Cutover status as shown below, you are ready to perform a cut-over.
+
+.. figure:: images/14.png
+        
+15. Click on the **Cutover** button:
+
+.. figure:: images/15.png
+ 
+16. And once the Migration Status shows Completed, you should be able to view the target VM.
+
+17. Go into your Prism Element UI and you should view the newly migrated VM under the VM list.
+
+.. figure:: images/16.png
+ 
+18. Congratulations! You have successfully performed a VM migration using Nutanix Move.
