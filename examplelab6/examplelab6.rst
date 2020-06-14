@@ -53,7 +53,7 @@ This exercise is composed of the following tasks:
  * Writing a Large File to Each New Virtual Disk
  * Observing the Result of Compression Savings
 
-Task 1: Adding Two Virtual Disks to a Virtual Machine
+Adding Two Virtual Disks to a Virtual Machine
 .......................................................
  
 In this task you will clone a Windows VM and add two virtual disks. One virtual disk will be placed in the **Compressed-Container** and the other into the **NotCompressed-Container**.
@@ -83,7 +83,7 @@ Index: **Next Available**
  * Compressed-Container
  * NotCompressed-Container
 
- Task 2: Formatting the New Virtual Disks 
+Formatting the New Virtual Disks 
 .........................................
 
 In this task you will format the newly added virtual disks in your Windows virtual machine so that you can write a large file to each of the new virtual disks.
@@ -134,7 +134,7 @@ h.	When the new volume creation has completed, click **Close**.
  
 10.	Close the **Server Manager** window.
 
-Task 3: Writing a Large File to Each New Virtual Disk
+Writing a Large File to Each New Virtual Disk
 ....................................................... 
 
 In this task you will write a large file to each of the new disks using the (DOS)utility **fsutil**.
@@ -167,7 +167,7 @@ You are to substitute the drive letter of the virtual disk which you have create
 
 7.	Close the **VM console** window.
 
-Task 4: Observing the Result of Compression Savings
+Observing the Result of Compression Savings
 .................................................... 
 
 In this task you will observe the result of container compression.
