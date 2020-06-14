@@ -14,15 +14,12 @@
   examplelab6/examplelab6
   examplelab7/examplelab7
   examplelab8/examplelab8
+  examplelab9/examplelab9
+  examplelab10/examplelab10
+  examplela11/examplelab11
+  examplelab12/examplelab12
+  examplelab13/examplelab13
 
-
-.. toctree::
-  :maxdepth: 2
-  :caption: Optional Labs
-  :name: _optional_labs
-  :hidden:
-
-  examplelab3/examplelab3
 
 .. toctree::
   :maxdepth: 2
@@ -30,8 +27,8 @@
   :name: _appendix
   :hidden:
 
-  appendix/glossary
-  appendix/otherstuff
+  appendix/appendix
+
 
 .. _getting_started:
 
