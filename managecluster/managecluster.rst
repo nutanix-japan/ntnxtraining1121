@@ -66,7 +66,8 @@ What is the license type on your cluster?
 
 .. figure:: images/5.png
  
-  From the **Overview** page, locate the **VM Summary** at the middle left. How many virtual machines are shown?
+
+From the **Overview** page, locate the **VM Summary** at the middle left. How many virtual machines are shown?
 
 5.	In the upper-left corner of the browser window, click **Table**.
 
@@ -111,7 +112,7 @@ In this exercise you will explore various views in Prism.
   The last dashboard selected will be represented on the top bar of the UI.
 
 
- .. figure:: images/9.png
+.. figure:: images/9.png
 
 2.	Explore the features available under the **Settings** page (**gear** icon) and answer the following questions:
 What is current and maximum setting for **Session Timeout for Current User (UI Settings)**?
