@@ -237,6 +237,7 @@ In this task you will create an anti-affinity group using the command line inter
    <acropolis> vm_group.antiaffinity_set  AA-Group-<your_initials>
 
 Applying the policy, enforces the rule that the VMs listed in the VM group are not allowed on the same node under normal circumstances. This can be overruled by ADS in the case of resource constraints that would prevent these VMs from starting.
+
 9.  Review the anti-affinity VMs in the VM dashboard. One of the VMs should have migrated to a different host. If they are still on the same host, you could expedite the anti-affinity process by power cycling one of the VMs in the group. Type:
 
 .. code-block:: bash
