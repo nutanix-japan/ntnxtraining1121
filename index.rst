@@ -16,7 +16,7 @@
   examplelab8/examplelab8
   examplelab9/examplelab9
   examplelab10/examplelab10
-  examplela11/examplelab11
+  examplelab11/examplelab11
   examplelab12/examplelab12
   examplelab13/examplelab13
 
