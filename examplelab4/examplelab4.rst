@@ -128,8 +128,10 @@ In this exercise you will create a CentOS VM from an existing, pre-installed dis
 
 7.  Close the **VM console** window.
   
+
 Updating CPU and Memory
-....................。。。
+........................
+
 
 **Individual Exercise**
 
