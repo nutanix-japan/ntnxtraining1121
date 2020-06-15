@@ -1,4 +1,3 @@
-
 .. _example_lab_4:
 
 ---------------------------
@@ -12,7 +11,8 @@ In this exercise you will create a Windows Server VM from a Windows installation
 
 AHV provides an **Image Service** feature allows you to build a store of imported files that you can use to create a CD-ROM from an ISO image or an operating system Disk from a disk image when creating a VM. The Image Service supports raw, vhd, vhdx, vmdk, vdi, iso, and qcow2 disk formats
 
-  This exercise is composed of the following tasks:
+
+This exercise is composed of the following tasks:
 
  * Build a Windows Virtual Machine
  * Install a Windows Operating System
@@ -25,7 +25,7 @@ In order to provide high performance IO to VMs, AHV requires the installation of
 
 Nutanix validates and distributes these drivers via http://portal.nutanix.com. The ISO image containing the drivers has already been uploaded to the Image Service.
 
-Task 1: Building a Windows Virtual Machine
+Building a Windows Virtual Machine
 .............................................
 
 1.  In **Prism Element** > **VM** > **Tabl**e, click + **Create VM**.
@@ -87,8 +87,9 @@ This will use the virtual CD-ROM device to mount the NGT installation ISO to the
  
         Congrats! You have successfully deployed a Windows VM!
 
-  Creating a Linux Virtual Machine
+Creating a Linux Virtual Machine
 +++++++++++++++++++++++++++++++++++
+
 In this exercise you will create a CentOS VM from an existing, pre-installed disk image in the Image Service. It is common in many environments to have “template” style images of pre-installed operating systems. Similar to the previous exercise, the disk image has already been uploaded to the Image Service.
 
 1.  In **Prism Element** > **VM** > **Table**, click **+ Create VM**.
@@ -110,9 +111,13 @@ In this exercise you will create a CentOS VM from an existing, pre-installed dis
  * Select **Add New NIC**
     - **VLAN Name** - Unmanaged
     - Select **Add**
+
 3.  Click **Save** to create the VM.
+
 4.  Launch the console to see the VM being started.
+
 5.  Login with root and the credentials provided in the Cluster General Information site.
+
 6.  Shutdown CentOS by typing the following:
      
   .. code-block:: bash
@@ -122,22 +127,29 @@ In this exercise you will create a CentOS VM from an existing, pre-installed dis
 7.  Close the **VM console** window.
   
 Updating CPU and Memory
-....................
+....................。。。
 
 **Individual Exercise**
 
 In this task, you will add a CPU and increase the amount of Memory on your Windows VM.
 
 1.  From the Prism **VM** dashboard, click to select the **Windows-<your initials>** VM and in the links below the **VM** table, click **Update**.
+
 2.  In the **Update VM** dialog box, under **Compute Details**, increase the VCPU(S) from **2** to **4** and the Memory from **4** to **8**.
+
 3.  Click **Save**.
+
 4.  This should result in an update error. Dynamic bulk updates to a VM are not allowed.
  
    .. figure:: images/5.png
 
+
 5.  Modify one component at a time. Click **Update** once again for your **Windows-<your initials>** VM and in the **Update VM** dialog box, under **Computer Details**, increase the VCPU(S) from **2** to **4**.
+
 6.  Click **Save**.
+
 7.  Observe the change in the VM Dashboard for your VM. The Core column will change from **2** to **4** (two VCPUs with two cores each).
+
 8.  Repeat the update process and change the Memory from **4** to **8**.
 irst bridge  (br0)?
  
