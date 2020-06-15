@@ -5,7 +5,7 @@
 Prism Central
 -------------
 
-********Working with Prism Central
+Working with Prism Central
 ++++++++++++++++++++++++++
 
 You will work through the lab using Prism Central interface. Your cluster can only be registered to one Prism Central Server at a time. 
