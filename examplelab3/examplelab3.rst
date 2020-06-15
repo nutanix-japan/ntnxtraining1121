@@ -28,32 +28,10 @@ In this exercise you will create an unmanaged network.
 
  * Enable IP address Management: **Leave unchecked**
 
+    .. figure:: images/3.png
+
 6.	Click **Save** to create the network.
 
-Creating a Managed Client Network
-++++++++++++++++++++++++++++++++++++
-In this exercise you will create an IP address management (IPAM) or managed network.
-
-1.	Click **+ Create Network**.
-
-2.	Use the information in the table below to complete the Create Network dialog box:
-
- * Name: **Managed Client Network**
- * VLAN ID: **0 (zero)**
- * Enable IP Address Management: **Click the check box to enable**.
- * Network IP Address/Prefix Length: Refer to Cluster General Information
- * Gateway IP Address: Refer to Cluster General Information
- * Configure Domain Settings: **Uncheck the box**
-
-3.	Scroll down and click **+ Create Poo**l.
-4.	Fill out the **Add IP Pool** dialog box with the IP pool **Start Address** and **End Address** refer to the pool address range from the **Cluster Configuration Guide**.
-
-   .. figure:: images/2.png
- 
-5.	Click **Submit**, then click **Save**.
-6.	Verify you now have an **Unmanaged Client Network** and a **Managed Client Network** in the **Network Configuration** dialog box.
-
-   .. figure:: images/3.png
  
 Managing Open vSwitch (OVS)
 ++++++++++++++++++++++++++++++++++++

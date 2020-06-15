@@ -66,7 +66,7 @@ Configuring a Migration Plan
 In this exercise, you will create a migration plan and initiate the migration.
 
    .. NOTE::
-   In this part of the exercise, you are to create a migration plan and initiate the migration of virtual machines which are located in the ESXi SOURCE to the TARGET Cluster you are currently working on. There are already pre-created VMs mapping to your User Account name of your VDI session. The target machines you are to migrate should corresponding to you VDI User  Account name. e.g Win2012-PHX-POC037-User01, Window2012-PHX-POC37-User02 etc 
+   In this part of the exercise, you are to create a migration plan and initiate the migration of virtual machines which are located in the ESXi SOURCE to the TARGET Cluster you are currently working on. There are already pre-created VMs mapping to your User Account name of your VDI session. The target machines you are to migrate should corresponding to you VDI User  Account name. e.g PHX-POC037-User01, PHX-POC37-User02 etc 
 
 1.  Click **+ New Migration Plan** on the top right side of your screen to create a new migration plan.
 
