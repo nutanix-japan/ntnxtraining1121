@@ -16,145 +16,143 @@ AHV provides an **Image Service** feature allows you to build a store of importe
 
 This exercise is composed of the following tasks:
 
- * Build a Windows Virtual Machine
- * Install a Windows Operating System
- * Attach and install Nutanix Guest Tools
+* Build a Windows Virtual Machine
+* Install a Windows Operating System
+* Attach and install Nutanix Guest Tools
 
-.. Note:: 
+.. note::
+
    You can explore available images and upload images under :fa:`cog` > **Image Configuration** in Prism Element
-    
-In order to provide high performance IO to VMs, AHV requires the installation of paravirtualized drivers into the guest (similar to VMware Tools). For Windows guests specifically, these drivers must be loaded during installation in order for the VM’s disk to be accessible by the Windows installer.
+
+In order to provide high performance IO to VMs, AHV requires the installation of para-virtualized drivers into the guest (similar to VMware Tools). For Windows guests specifically, these drivers must be loaded during installation in order for the VM’s disk to be accessible by the Windows installer.
 
 Nutanix validates and distributes these drivers via http://portal.nutanix.com. The ISO image containing the drivers has already been uploaded to the Image Service.
 
 Building a Windows Virtual Machine
 .............................................
 
-1.  In **Prism Element** > **VM** > **Tabl**e, click + **Create VM**.
+#. In **Prism Element** > **VM** > **Table**, click **+ Create VM**.
 
-2.  Fill out the following fields and click **Save**:
+#. Fill out the following fields and click **Save**:
 
-Leave other settings at their default values.
+   Leave other settings at their default values.
 
- * **Name** - Initials-Windows_VM
- * **Description**-(Optional) Description for your VM.
- * **vCPU(s)** - 2
- * **Number of Cores per vCPU** - 1
- * **Memory** - 4 GiB
- * Select   next to CDROM
-    - O**peration** - Clone from Image Service
-    - **Image** – Virt IO
-    - Select **Update**
+   * **Name** - Initials-Windows_VM
+   * **Description**-(Optional) Description for your VM.
+   * **vCPU(s)** - 2
+   * **Number of Cores per vCPU** - 1
+   * **Memory** - 4 GiB
+   * Select   next to CDROM
+      - O**peration** - Clone from Image Service
+      - **Image** – Virt IO
+      - Select **Update**
 
-This will mount the Windows Server ISO from the Image Service for boot/installation
- * **Select** + **Add New** Disk
-    - **Type** - DISK
-    - **Operation** – Clone from Image Service
-    - **Image** – Windows 2012
-    - Select **Add**
+#. This will mount the Windows Server ISO from the Image Service for boot/installation
 
-This will add a disk containing the Windows boot media.
+   * **Select** + **Add New** Disk
+      - **Type** - DISK
+      - **Operation** – Clone from Image Service
+      - **Image** – Windows 2012
+      - Select **Add**
 
- * **Select Add New NIC**
-    - VLAN Name – **Unmanaged Client**
-    - Select **Add**
+#. This will add a disk containing the Windows boot media.
 
+   * **Select Add New NIC**
+      - VLAN Name – **Unmanaged Client**
+      - Select **Add**
 This will add a single virtual NIC to the VM on the selected Virtual  Network
 
-3.  Click **Save** to create the VM.
- 
-.. Note:: 
-  At the following URL you can find the supported Operating Systems: https://portal.nutanix.com/page/documents/compatibility-matrix/guestos
+#. Click **Save** to create the VM.
 
- 
-4.  Select the VM, then click **Power On** from the list of action links (below the table) to turn on the VM.
+   .. note::
+    At the following URL you can find the supported Operating Systems: https://portal.nutanix.com/page/documents/compatibility-matrix/guestos
 
- 
-5.  Select the VM, then click **Launch Console** from the **Actions** drop-down menu to access an HTML5 console to interact with the VM.
+#. Select the VM, then click **Power On** from the list of action links (below the table) to turn on the VM.
 
-6.  When prompted the enter the password for the Administrator, please enter password as **Nutanix/4u**
+
+#. Select the VM, then click **Launch Console** from the **Actions** drop-down menu to access an HTML5 console to interact with the VM.
+
+#. When prompted the enter the password for the Administrator, please enter password as **Nutanix/4u**
 
    .. figure:: images/1.png
 
    .. figure:: images/2.png
 
-7.  Following OS installation you can complete the Nutanix Guest Tools (NGT) installation by selecting the VM in Prism and clicking Manage Guest Tools > Enable Nutanix Guest Tools > Mount Guest Tools,and clicking Submit. 
-This will use the virtual CD-ROM device to mount the NGT installation ISO to the VM. NGT includes the previously installed VirtIO drivers, as well as services to support Self-Service File Restore (SSR) and Application Consistent (VSS) snapshots.
- 
+#. Following OS installation you can complete the Nutanix Guest Tools (NGT) installation by selecting the VM in Prism and clicking Manage Guest Tools > Enable Nutanix Guest Tools > Mount Guest Tools,and clicking Submit.
+
+   This will use the virtual CD-ROM device to mount the NGT installation ISO to the VM. NGT includes the previously installed VirtIO drivers, as well as services to support Self-Service File Restore (SSR) and Application Consistent (VSS) snapshots.
+
    .. figure:: images/3.png
 
-8.  Return to the VM console to complete the NGT installation by clicking on the Nutanix Guest Tools CD and follow through the installation wizard.
+#. Return to the VM console to complete the NGT installation by clicking on the Nutanix Guest Tools CD and follow through the installation wizard.
 
    .. figure:: images/4.png
- 
-        Congrats! You have successfully deployed a Windows VM!
+
+Congrats! You have successfully deployed a Windows VM!
 
 Creating a Linux Virtual Machine
 +++++++++++++++++++++++++++++++++++
 
 In this exercise you will create a CentOS VM from an existing, pre-installed disk image in the Image Service. It is common in many environments to have “template” style images of pre-installed operating systems. Similar to the previous exercise, the disk image has already been uploaded to the Image Service.
 
-1.  In **Prism Element** > **VM** > **Table**, click **+ Create VM**.
+#. In **Prism Element** > **VM** > **Table**, click **+ Create VM**.
 
-2.  Fill out the following field and click **Save**:
+#. Fill out the following field and click **Save**:
 
- * **Name** - Initials-Linux_VM
- * **Description** - (Optional) Description for your VM.
- * vCPU(s) - 2
- * **Number of Cores per vCPU** - 1
- * **Memory** - 4 GiB
- * Select **+ Add New Disk**
-    - **Type** – Disk
-    - **Operation** - Clone from Image Service
-    - **Image** – CentOS
-    - Select **Add**
-    - Boot Configuration
-    - Leave the default selected **Legacy Boot**
- * Select **Add New NIC**
-    - **VLAN Name** - Unmanaged
-    - Select **Add**
+   * **Name** - Initials-Linux_VM
+   * **Description** - (Optional) Description for your VM.
+   * vCPU(s) - 2
+   * **Number of Cores per vCPU** - 1
+   * **Memory** - 4 GiB
+   * Select **+ Add New Disk**
+     - **Type** – Disk
+     - **Operation** - Clone from Image Service
+     - **Image** – CentOS
+     - Select **Add**
+     - Boot Configuration
+     - Leave the default selected **Legacy Boot**
+   * Select **Add New NIC**
+     - **VLAN Name** - Unmanaged
+     - Select **Add**
 
-3.  Click **Save** to create the VM.
+#. Click **Save** to create the VM.
 
-4.  Launch the console to see the VM being started.
+#. Launch the console to see the VM being started.
 
-5.  Login with root and the credentials provided in the Cluster General Information site.
+#. Login with root and the credentials provided in the Cluster General Information site.
 
-6.  Shutdown CentOS by typing the following:
-     
-  .. code-block:: bash
+#. Shutdown CentOS by typing the following:
+
+   .. code-block:: bash
 
      init 0
 
-7.  Close the **VM console** window.
+#. Close the **VM console** window.
   
 
 Updating CPU and Memory
 ........................
 
-
 **Individual Exercise**
 
 In this task, you will add a CPU and increase the amount of Memory on your Windows VM.
 
-1.  From the Prism **VM** dashboard, click to select the **Windows-<your initials>** VM and in the links below the **VM** table, click **Update**.
+#. From the Prism **VM** dashboard, click to select the **Windows-<your initials>** VM and in the links below the **VM** table, click **Update**.
 
-2.  In the **Update VM** dialog box, under **Compute Details**, increase the VCPU(S) from **2** to **4** and the Memory from **4** to **8**.
+#. In the **Update VM** dialog box, under **Compute Details**, increase the VCPU(S) from **2** to **4** and the Memory from **4** to **8**.
 
-3.  Click **Save**.
+#. Click **Save**.
 
-4.  This should result in an update error. Dynamic bulk updates to a VM are not allowed.
- 
+#. This should result in an update error. Dynamic bulk updates to a VM are not allowed.
+
    .. figure:: images/5.png
 
 
-5.  Modify one component at a time. Click **Update** once again for your **Windows-<your initials>** VM and in the **Update VM** dialog box, under **Computer Details**, increase the VCPU(S) from **2** to **4**.
+#. Modify one component at a time. Click **Update** once again for your **Windows-<your initials>** VM and in the **Update VM** dialog box, under **Computer Details**, increase the VCPU(S) from **2** to **4**.
 
-6.  Click **Save**.
+#. Click **Save**.
 
-7.  Observe the change in the VM Dashboard for your VM. The Core column will change from **2** to **4** (two VCPUs with two cores each).
+#. Observe the change in the VM Dashboard for your VM. The Core column will change from **2** to **4** (two VCPUs with two cores each).
 
-8.  Repeat the update process and change the Memory from **4** to **8**.
-irst bridge  (br0)?
- 
+   . Repeat the update process and change the Memory from **4** to **8**.
  

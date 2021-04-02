@@ -10,58 +10,57 @@ Creating an Unmanaged Client Network
 
 In this exercise you will create an unmanaged network.
 
-1.	Log on to your cluster’s Prism UI (Element) as the **admin** user.
+#. Log on to your cluster’s Prism UI (Element) as the **admin** user.
 
-2.	Click the **gear** icon, scroll down in **Settings** to the **Network** section and click **Network Configuration**.
+#. Click the **gear** icon, scroll down in **Settings** to the **Network** section and click **Network Configuration**.
 
-3.	Click **Virtual Networks** if not already selected.
+#. Click **Virtual Networks** if not already selected.
 
    .. figure:: images/1.png
- 
-4.	Click **Create Network**
 
-5.	Fill out the **Create Network** dialog box as follows:
+#. Click **Create Network**
 
- * Name: **Unmanaged Client Network**
+#. Fill out the **Create Network** dialog box as follows:
 
- * VLAN ID: **<Refer to Cluster Configuration Information>**
+   * Name: **Unmanaged Client Network**
 
- * Enable IP address Management: **Leave unchecked**
+   * VLAN ID: **<Refer to Cluster Configuration Information>**
 
-    .. figure:: images/3.png
+   * Enable IP address Management: **Leave unchecked**
 
-6.	Click **Save** to create the network.
+   .. figure:: images/3.png
 
- 
+#. Click **Save** to create the network.
+
 Managing Open vSwitch (OVS)
 ++++++++++++++++++++++++++++++++++++
 
 In this exercise you will explore a few commands to manage Open vSwitch (OVS) from the CVM and use those commands to build an additional virtual switch.
 
-1.	Using PuTTY, establish an SSH connection to one of your CVMs and log on with the **nutanix** user and password **(Refer to Cluster Configuration Guide)**.
+#. Using PuTTY, establish an SSH connection to one of your CVMs and log on with the **nutanix** user and password **(Refer to Cluster Configuration Guide)**.
 
-2.	Use **allssh** to execute commands on all CVMs. To view network interface information, type the command:
+#. Use **allssh** to execute commands on all CVMs. To view network interface information, type the command:
 
-  .. code-block:: bash
+   .. code-block:: bash
 
      allssh manage_ovs show_interfaces
- 
- * How many network interfaces are on each node?
- * How many network interfaces are 10GbE?
- * How many network interfaces are 1GbE?
 
-3.	To list existing bridges for each Nutanix node in the cluster, type the command:
+   * How many network interfaces are on each node?
+   * How many network interfaces are 10GbE?
+   * How many network interfaces are 1GbE?
 
-  .. code-block:: bash
+#. To list existing bridges for each Nutanix node in the cluster, type the command:
+
+   .. code-block:: bash
 
      allssh manage_ovs show_bridges
 
- * How many bridges are on each node?
+   * How many bridges are on each node?
 
-4.	To show bridge uplinks for each Nutanix node in the cluster, type the command:
+#. To show bridge uplinks for each Nutanix node in the cluster, type the command:
 
-  .. code-block:: bash
+   .. code-block:: bash
 
     allssh manage_ovs show_uplinks
 
- * Which network interfaces are on bond (or port) br0-up of the f
+   * Which network interfaces are on bond (or port) br0-up?
