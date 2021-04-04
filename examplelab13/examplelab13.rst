@@ -18,7 +18,7 @@ Cluster Management and Expansion
 
 #. Expanding a Nutanix Cluster and Imaging a New Node
 
-   This `video <https://www.youtube.com/watch?v=M7BzgEJOevc>`_` shows you how you can expand a cluster through Prism UI and also image a node as it gets added into an existing cluster.
+   This `video <https://www.youtube.com/watch?v=M7BzgEJOevc>`_ shows you how you can expand a cluster through Prism UI and also image a node as it gets added into an existing cluster.
 
 #. Software Upgrades
 
