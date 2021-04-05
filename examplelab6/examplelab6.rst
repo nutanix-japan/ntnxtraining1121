@@ -6,7 +6,7 @@ Distributed Storage Fabric
 ---------------------------------------
 
 Creating a Container with Compression Enabled
-+++++++++++++++++++++++++++++++++++++++++++++++
+.......................................................
 
 In this exercise you will create a new storage container with compression enabled.
 
@@ -16,7 +16,7 @@ In this exercise you will create a new storage container with compression enable
    .. figure:: images/1.png
 
 #. In the upper-right corner of the browser window, click **+ Storage Container**.
-#. In the **Create Storage Container** window, type: **Compressed-Container** in the **Name** field.
+#. In the **Create Storage Container** window, type: **<your initials>-Compressed-Container** in the **Name** field.
 
    .. figure:: images/2.png
 
@@ -28,13 +28,13 @@ In this exercise you will create a new storage container with compression enable
 #. Click **Save**.
 
 Creating a Container without Compression
-+++++++++++++++++++++++++++++++++++++++++++++++
+.......................................................
 
 In this exercise you will create a new storage container without compression.
 
 #. In the upper right corner of the browser window, click **+ Storage Container**.
 
-#. In the **Create Storage Container** window, type: **NotCompressed-Container** in the Name field.
+#. In the **Create Storage Container** window, type: **<your initials>-NotCompressed-Container** in the Name field.
 
 #. Click **Save**.
 
@@ -42,7 +42,7 @@ In this exercise you will create a new storage container without compression.
     Do not change anything within advanced settings.
 
 Comparing Data in a Compressed vs Uncompressed Container
-+++++++++++++++++++++++++++++++++++++++++++++++
+..............................................................................................................
 
 In this exercise you will work individually to clone your original Windows VM and add two virtual disks. One of these virtual disks will be placed in the compressed container and the other into the uncompressed container you created in the previous exercises. Data will be generated on both virtual disks to compare results.
 
@@ -56,7 +56,7 @@ This exercise is composed of the following tasks:
 Adding Two Virtual Disks to a Virtual Machine
 .......................................................
 
-In this task you will clone a Windows VM and add two virtual disks. One virtual disk will be placed in the **Compressed-Container** and the other into the **NotCompressed-Container**.
+In this task you will clone a Windows VM and add two virtual disks. One virtual disk will be placed in the **<your initials>-Compressed-Container** and the other into the **<your initials>-NotCompressed-Container**.
 
 #. From the **VM** dashboard, **Table** view, clone **Windows 2012 VM** VM.
 #. Select the VM and click the **Clone** link.
@@ -69,7 +69,7 @@ In this task you will clone a Windows VM and add two virtual disks. One virtual 
    Type: **Disk**
    Operation: **Allocate on Storage Container**
    Bus Type: **SCSI**
-   Storage Container: **Compressed-Container**
+   Storage Container: **<your initials>-Compressed-Container**
    Size (GiB): **10**
    Index: **Next Available**
 
@@ -77,7 +77,7 @@ In this task you will clone a Windows VM and add two virtual disks. One virtual 
 
    .. figure:: images/4.png
 
-#. Repeat the previous steps to add a second **10GB** virtual disk to the virtual machine with the second virtual disk placed into the **NotCompressed-Container**.
+#. Repeat the previous steps to add a second **10GB** virtual disk to the virtual machine with the second virtual disk placed into the **<your initials>-NotCompressed-Container**.
 #. Click **Save**.
 #. Scroll down (if required) in the **VM** dashboard and at the lower left, under **VM DETAILS**, verify the VM is utilizing three containers:
 
@@ -185,15 +185,15 @@ In this task you will observe the result of container compression.
 
 #. Click **Table**, then select **Storage Container**.
 
-#. For the **Compressed-Container** and the **NotCompressed-Container**, look in the **Used** column and compare the amount of physical space used.
+#. For the **<your initials>-Compressed-Container** and the **<your initials>-NotCompressed-Container**, look in the **Used** column and compare the amount of physical space used.
    * Do you see a difference?
 
-   The **Compressed-Container** should be using significantly less space than the **NotCompressed-Container**.
+   The **<your initials>-Compressed-Container** should be using significantly less space than the **<your initials>-NotCompressed-Container**.
 
    .. figure:: images/11.png
 
-#. Click to select the **Compressed-Container**.
-#. Below the table of containers, on the left of the browser window, examine the values below the **Summary > Compressed-Container** box and answer the following questions:
+#. Click to select the **<your initials>-Compressed-Container**.
+#. Below the table of containers, on the left of the browser window, examine the values below the **Summary > <your initials>-Compressed-Container** box and answer the following questions:
 
    * Is compression turned on?
    * How much space has been saved due to compression?

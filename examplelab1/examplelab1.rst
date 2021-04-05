@@ -17,7 +17,7 @@ You should now see the **Prism Home** page.
 Configuring an NTP Server
 ++++++++++++++++++++++++++++
 
-#. Click the **Gear** icon in the upper right corner of the browser window, scroll down the **Settings** list displayed on the left side and select **NTP Servers**.
+#. Click the :fa:`cog` icon in the upper right corner of the browser window, scroll down the **Settings** list displayed on the left side and select **NTP Servers**.
 
    .. figure:: images/2.png
 
@@ -75,7 +75,7 @@ In this exercise you will familiarise yourself with primary Nutanix interfaces s
 
    .. figure:: images/6.png
 
-   Are any VMs listed? If so, what VMs are they? If not, why not?
+   Are there any VMs listed? If so, what VMs are they? If not, why not?
 
 #. At the upper-middle-right of the **VM Dashboard** page, click to select the **Include Controller VMs** check box and answer the following questions:
 
@@ -85,7 +85,7 @@ In this exercise you will familiarise yourself with primary Nutanix interfaces s
 
    How much memory is allocated to each CVM?
 
-#. Click the **gear** icon, scroll through the Settings on the left, select SSL Certificate, and complete the table below:
+#. Click the :fa:`cog` icon, scroll through the Settings on the left, select SSL Certificate, and complete the table below:
 
    Key Type:
    Signing Algorithm:
@@ -119,7 +119,7 @@ In this exercise you will explore various views in Prism.
 
    .. figure:: images/9.png
 
-#. Explore the features available under the **Settings** page (**gear** icon) and answer the following questions:
+#. Explore the features available under the **Settings** page ( :fa:`cog` icon) and answer the following questions:
 
    What is current and maximum setting for **Session Timeout for Current User (UI Settings)**?
 
@@ -142,11 +142,11 @@ Using nCLI
 
 In this exercise you will learn the Nutanix Command Line Interface (nCLI):
 
-•	Basic Commands and Getting Help
+•	Basic commands and getting help
 
-•	Extracting Information
+•	Extracting information
 
-•	Use nCLI to Build a Storage Container
+•	Use nCLI to build a Storage Container
 
 Accessing nCLI and Using Basic Commands
 ........................................

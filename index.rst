@@ -20,7 +20,6 @@
   examplelab12/examplelab12
   examplelab13/examplelab13
 
-
 .. toctree::
   :maxdepth: 2
   :caption: Appendix
@@ -28,7 +27,6 @@
   :hidden:
 
   appendix/appendix
-
 
 .. _getting_started:
 

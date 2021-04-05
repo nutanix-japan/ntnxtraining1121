@@ -22,7 +22,7 @@ In this exercise you will create an unmanaged network.
 
 #. Fill out the **Create Network** dialog box as follows:
 
-   * Name: **Unmanaged Client Network**
+   * Name: **<Your-Intials>-Unmanaged Client Network**
 
    * VLAN ID: **<Refer to Cluster Configuration Information>**
 
