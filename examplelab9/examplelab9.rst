@@ -10,9 +10,9 @@ Configuring High Availability
 
 In this exercise you will observe the impact and benefits of the VM high availability feature.
 
-#. Verify the **HA-Lab-<initials>** VM is powered on.
+.. #. Verify the **HA-Lab-<initials>** VM is powered on.
 
-#. Click the **gear** icon, scroll down under **Settings** and under **Data Resiliency** click **Manage VM High Availability**.
+#. Click the :fa:`cog` icon, scroll down under **Settings** and under **Data Resiliency** click **Manage VM High Availability**.
 
    .. figure:: images/1.png
 
