@@ -28,6 +28,10 @@ Configuring an NTP Server
 
 #. Verify the NTP configuration using nCLI.
 
+   .. note::
+
+   	For Mac user, open a terminal, SSH to CVM IP using the same credential
+
    a.	Open the PuTTY utility on your virtual desktop.
 
    b.	In the **PuTTY Host Name (or IP address)** field, type the IP address of the first CVM from your lab handout.

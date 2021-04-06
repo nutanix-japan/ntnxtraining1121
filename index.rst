@@ -47,8 +47,6 @@
   :hidden:
 
   examplelab7/examplelab7
-  examplelab8/examplelab8
-
 
 .. toctree::
   :maxdepth: 2
