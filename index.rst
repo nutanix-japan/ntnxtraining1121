@@ -2,7 +2,7 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Labs
+  :caption: Cluster Basics
   :name: _labs
   :hidden:
 
@@ -12,13 +12,34 @@
   examplelab4/examplelab4
   examplelab5/examplelab5
   examplelab6/examplelab6
-  examplelab7/examplelab7
-  examplelab8/examplelab8
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Cluster Resiliency and Protection
+  :name: _resiliency
+  :hidden:
+
   examplelab9/examplelab9
   examplelab10/examplelab10
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Cluster Management
+  :name: _management
+  :hidden:
+
   examplelab11/examplelab11
   examplelab12/examplelab12
   examplelab13/examplelab13
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Cluster Workload Migration
+  :name: _move
+  :hidden:
+
+  examplelab7/examplelab7
+  examplelab8/examplelab8
 
 .. toctree::
   :maxdepth: 2

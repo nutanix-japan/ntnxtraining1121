@@ -3,7 +3,77 @@
 
 ----------------------------------------
 Migrating Workloads with Nutanix Move
+-----------------------------------------
+
+
+Installing Move VM
++++++++++++++++++++++
+
+.. _linux_tools_vm:
+
+---------------
+Linux Tools VM
+---------------
+
+Overview
++++++++++
+
+This CentOS VM image will be staged with packages used to support multiple lab exercises.
+
+Deploy this VM on your assigned cluster if directed to do so as part of **Lab Setup**.
+
+.. raw:: html
+
+  <strong><font color="red">Only deploy the VM once, it does not need to be cleaned up as part of any lab completion.</font></strong>
+
+Installing Move VM
 ---------------------------------------
+
+#. Login to you Prism Element
+
+#. Upload an Move image using **Settings > Image Configuration**
+
+#. Click on **Upload Image** and enter the following values:
+
+   - **Name** Initials-MoveVM
+   - **Annotation** - (optional)
+   - **Image Type** - Disk
+   - **Storage Container** - default-container-#########
+   - **From URL** -(Copy Download URL from portal.nutanix.com > Downloads >Nutanix Move)
+   - **Alternative URL** - http://10.55.251.38/workshop_staging/move-3.6.0.qcow2
+
+#. Once the image is ready, proceed to create Move VM
+
+#. In **Prism Central** > select :fa:`bars` **> Virtual Infrastructure > VMs**, and click **Create VM**.
+
+#. Fill out the following fields:
+
+   - **Name** - *Initials*-Move
+   - **Description** - (Optional) Description for your VM.
+   - **vCPU(s)** - 1
+   - **Number of Cores per vCPU** - 2
+   - **Memory** - 2 GiB
+
+   - Select **+ Add New Disk**
+   - **Type** - DISK
+   - **Operation** - Clone from Image Service
+   - **Image** - CentOS7.qcow2
+   - Select **Add**
+
+   - Select **Add New NIC**
+   - **VLAN Name** - Secondary
+   - Select **Add**
+
+#. Click **Save** to create the VM.
+
+#. Power on the VM.
+
+Verify Move VM Install
++++++++++++++++++++++++
+
+Open **Prism Element > VM**
+
+Confirm that **Move VM** is visible and powered-on.
 
 Setting up a Move VM
 +++++++++++++++++++++
