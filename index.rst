@@ -32,13 +32,6 @@
   examplelab12/examplelab12
   examplelab13/examplelab13
 
-.. toctree::
-  :maxdepth: 2
-  :caption: Nutanix Volumes
-  :name: _volumes
-  :hidden:
-
-  examplelab8/examplelab8
 
 .. toctree::
   :maxdepth: 2
@@ -47,6 +40,14 @@
   :hidden:
 
   examplelab7/examplelab7
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Nutanix Volumes
+  :name: _volumes
+  :hidden:
+
+  examplelab8/examplelab8
 
 .. toctree::
   :maxdepth: 2
