@@ -78,10 +78,10 @@ Agenda
 ++++++
 
 - Cluster Basics
-  - Nutanix Technology Overview
-  - Nutanix Configuration
-  - Deploying and Managing Workloads
-  - Security Compliance
+   - Nutanix Technology Overview
+   - Nutanix Configuration
+   - Deploying and Managing Workloads
+   - Security and Compliance
 - Cluster Resiliency and Protection
 - Cluster Management
 - Cluster Workload Migration
