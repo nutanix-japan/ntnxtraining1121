@@ -79,6 +79,8 @@ In this exercise, you will work towards deploying Nutanix Move VM on a Nutanix A
 
    .. figure:: images/2.png
 
+#. Upgrade Move VM to latest version if there a pop-up requesting this. This should only take a few minutes. The option will popup or go to **Settings > Upgrade** to complete this step.
+
 Configuring Move
 ................................................
 
