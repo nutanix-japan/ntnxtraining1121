@@ -64,25 +64,28 @@ Getting Started
 ---------------
 
 
-What's New
-++++++++++
-
-- Workshop updated for the following software versions:
-    - AOS & PC 5.11
-
-- Optional Lab Updates:
-
-- Added :ref:`example_lab_3`
+.. What's New
+.. ++++++++++
+..
+.. - Workshop updated for the following software versions:
+..     - AOS & PC 5.11
+..
+.. - Optional Lab Updates:
+..
+.. - Added :ref:`example_lab_3`
 
 Agenda
 ++++++
 
-- Introductions
-- Nutanix Technology Overview
-- Nutanix Configuration
-- Deploying and Managing Workloads
-- Security Compliance
-- Monitoring and Managing the Environment
+- Cluster Basics
+  - Nutanix Technology Overview
+  - Nutanix Configuration
+  - Deploying and Managing Workloads
+  - Security Compliance
+- Cluster Resiliency and Protection
+- Cluster Management
+- Cluster Workload Migration
+- Nutanix Volumes
 
 Introductions
 +++++++++++++
