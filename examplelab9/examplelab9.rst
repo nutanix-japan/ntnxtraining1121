@@ -10,11 +10,6 @@ Configuring High Availability
 
 In this exercise you will observe the impact and benefits of the VM high availability feature.
 
-.. note::
-
-   Since the cluster is a shared resource, if you notice that the setting has already turn on, please review the steps and then proceed to Step 7.
-
-
 #. Verify the **HA-Lab-<initials>** VM is powered on.
 
 #. Click the **gear** icon, scroll down under **Settings** and under **Data Resiliency** click **Manage VM High Availability**.

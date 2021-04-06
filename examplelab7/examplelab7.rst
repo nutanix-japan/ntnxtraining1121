@@ -4,21 +4,8 @@
 ----------------------------------------
 Migrating Workloads with Nutanix Move
 -----------------------------------------
-
-
-Installing Move VM
+Nutanix Move
 +++++++++++++++++++++
-
-.. _linux_tools_vm:
-
----------------
-Linux Tools VM
----------------
-
-Overview
-+++++++++
-
-This CentOS VM image will be staged with packages used to support multiple lab exercises.
 
 Deploy this VM on your assigned cluster if directed to do so as part of **Lab Setup**.
 
@@ -27,7 +14,7 @@ Deploy this VM on your assigned cluster if directed to do so as part of **Lab Se
   <strong><font color="red">Only deploy the VM once, it does not need to be cleaned up as part of any lab completion.</font></strong>
 
 Installing Move VM
----------------------------------------
+................................................
 
 #. Login to you Prism Element
 
@@ -69,14 +56,14 @@ Installing Move VM
 #. Power on the VM.
 
 Verify Move VM Install
-+++++++++++++++++++++++
+................................................
 
 Open **Prism Element > VM**
 
 Confirm that **Move VM** is visible and powered-on.
 
 Setting up a Move VM
-+++++++++++++++++++++
+................................................
 In this exercise, you will work towards deploying Nutanix Move VM on a Nutanix AHV cluster.
 
 #. In your Prism Element UI, identify the IP address of the Move VM.
@@ -90,10 +77,10 @@ In this exercise, you will work towards deploying Nutanix Move VM on a Nutanix A
 #. Log on using the new user and password.
 #. In the Move Supports dialog bog, click Continue.
 
-    .. figure:: images/2.png
+   .. figure:: images/2.png
 
 Configuring Move
-+++++++++++++++++
+................................................
 
 #. The **Move** dashboard displays **Source Environments**, **Target Environments** and **Migration Plans**.
 #. On the upper left side of the Move UI, click **+ Add Source**.
@@ -129,7 +116,7 @@ Configuring Move
 #. In the new **Target <your cluster name>** card, click the **ellipsis (…)** in the upper right corner and in the presented menu choose **Refresh**. This will initiate a query to update Move with the latest changes in your Nutanix target cluster.
 
 Configuring a Migration Plan
-++++++++++++++++++++++++++++
+................................................
 
 In this exercise, you will create a migration plan and initiate the migration.
 

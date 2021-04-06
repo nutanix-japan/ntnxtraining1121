@@ -22,11 +22,9 @@ Configuring an NTP Server
    .. figure:: images/2.png
 
 
-#. In the NTP Servers dialog box, review if there is any NTP server that has been added. Click + Add.
+#. In the NTP Servers dialog box, review if there is any NTP server that has been added.
 
-   .. note::
-
-      You should see **0.pool.ntp.org** under the HOSTNAME OR IP ADDRESS.
+#. Type **0.pool.ntp.org** and click **+ Add**
 
 #. Verify the NTP configuration using nCLI.
 

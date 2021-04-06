@@ -5,8 +5,11 @@
 Distributed Storage Fabric
 ---------------------------------------
 
+Storage Operations
+++++++++++++++++++++++++++++++++++
+
 Creating a Container with Compression Enabled
-------------------------------------------------------------------------------
+................................................
 
 In this exercise you will create a new storage container with compression enabled.
 
@@ -28,7 +31,7 @@ In this exercise you will create a new storage container with compression enable
 #. Click **Save**.
 
 Creating a Container without Compression
-------------------------------------------------------------------------------
+................................................
 
 In this exercise you will create a new storage container without compression.
 
@@ -42,7 +45,7 @@ In this exercise you will create a new storage container without compression.
     Do not change anything within advanced settings.
 
 Comparing Data in a Compressed vs Uncompressed Container
-------------------------------------------------------------------------------
+................................................................................................
 
 In this exercise you will work individually to clone your original Windows VM and add two virtual disks. One of these virtual disks will be placed in the compressed container and the other into the uncompressed container you created in the previous exercises. Data will be generated on both virtual disks to compare results.
 
@@ -54,7 +57,7 @@ This exercise is composed of the following tasks:
 * Observing the Result of Compression Savings
 
 Adding Two Virtual Disks to a Virtual Machine
-------------------------------------------------------------------------------
+................................................
 
 In this task you will clone a Windows VM and add two virtual disks. One virtual disk will be placed in the **<your initials>-Compressed-Container** and the other into the **<your initials>-NotCompressed-Container**.
 
@@ -86,7 +89,7 @@ In this task you will clone a Windows VM and add two virtual disks. One virtual 
    * NotCompressed-Container
 
 Formatting the New Virtual Disks
----------------------------------------
+................................................
 
 In this task you will format the newly added virtual disks in your Windows virtual machine so that you can write a large file to each of the new virtual disks.
 
@@ -100,7 +103,7 @@ In this task you will format the newly added virtual disks in your Windows virtu
 
 #. Click **Disks**.
 
-    .. figure:: images/6.png
+   .. figure:: images/6.png
 
 #. Right-click one of the **10GB** disks and select **Bring Online**.
 
@@ -137,7 +140,7 @@ In this task you will format the newly added virtual disks in your Windows virtu
 #. Close the **Server Manager** window.
 
 Writing a Large File to Each New Virtual Disk
-------------------------------------------------------------------------------
+................................................
 
 In this task you will write a large file to each of the new disks using the (DOS)utility **fsutil**.
 
@@ -170,7 +173,7 @@ In this task you will write a large file to each of the new disks using the (DOS
 #. Close the **VM console** window.
 
 Observing the Result of Compression Savings
-------------------------------------------------------------------------------
+................................................
 
 In this task you will observe the result of container compression.
 
