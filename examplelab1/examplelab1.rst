@@ -21,10 +21,11 @@ Configuring an NTP Server
 
    .. figure:: images/2.png
 
-
 #. In the NTP Servers dialog box, review if there is any NTP server that has been added.
 
 #. Type **0.pool.ntp.org** and click **+ Add**
+
+   .. figure:: images/3.png
 
 #. Verify the NTP configuration using nCLI.
 
@@ -53,7 +54,7 @@ In this exercise you will familiarise yourself with primary Nutanix interfaces s
 
 #. From the Prism UI, in the upper right corner, click the **User** drop down menu (it will be labeled with the currently logged-in user “admin”) and select **About Nutanix**.
 
-   .. figure:: images/3.png
+   .. figure:: images/4.png
 
    Which version of Acropolis (AOS) are you running?
 
@@ -63,25 +64,23 @@ In this exercise you will familiarise yourself with primary Nutanix interfaces s
 
 #. At the upper-right, click the question mark (?). From the drop down menu, click **Health Tutorial**. This loads the **Health** Dashboard and starts a **Welcome to Health Page** dialog box, click **Next**. After the simulation loads, click **Next** through the tutorial to view the Health Dashboard features.
 
-   .. figure:: images/4.png
+   .. figure:: images/5.png
 
 #. When completed, click **OK, got it!** to exit the simulation.
 
 #. Click the **dashboard** drop down menu (currently labeled **Health**). This drop down menu will show of all the dashboards. Select the **VM** dashboard.
 
-   .. figure:: images/5.png
+   .. figure:: images/6.png
 
 #. From the **Overview** page, locate the **VM Summary** at the middle left. How many virtual machines are shown?
 
 #. In the upper-left corner of the browser window, click **Table**.
 
-   .. figure:: images/6.png
+   .. figure:: images/7.png
 
    Are there any VMs listed? If so, what VMs are they? If not, why not?
 
 #. At the upper-middle-right of the **VM Dashboard** page, click to select the **Include Controller VMs** check box and answer the following questions:
-
-   .. figure:: images/7.png
 
    How many cores are allocated to each CVM?
 
@@ -96,7 +95,7 @@ In this exercise you will familiarise yourself with primary Nutanix interfaces s
 
 #. Type the letter a in the search bar and click acknowledge alerts. You are automatically redirected to the Alerts dashboard.
 
-   .. figure:: images/8.png
+   .. figure:: images/9.png
 
 #. Moving the mouse cursor to any alert listed under the **Title** column reveals a hyperlink. Select any alert hyperlink. This switches you to the page dedicated to that alert.
 
@@ -119,7 +118,7 @@ In this exercise you will explore various views in Prism.
      The last dashboard selected will be represented on the top bar of the UI.
 
 
-   .. figure:: images/9.png
+   .. figure:: images/10.png
 
 #. Explore the features available under the **Settings** page ( :fa:`cog` icon) and answer the following questions:
 
@@ -132,12 +131,12 @@ In this exercise you will explore various views in Prism.
 
 #. Explore the functions available under the **User** menu (it will be labeled with the currently logged-in user, **admin**). The several **Download** selections open new tabs in your browser and require internet access.
 
-   .. figure:: images/10.png
+   .. figure:: images/11.png
 
 
 #. Now that you are familiar with the Prism management interface, return to the **Home** dashboard by clicking on the Nutanix logo (“**X**”) or by selecting **Home** from the **dashboard** menu.
 
-   .. figure:: images/11.png
+   .. figure:: images/12.png
 
 Using nCLI
 +++++++++++
