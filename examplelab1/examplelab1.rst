@@ -117,7 +117,6 @@ In this exercise you will explore various views in Prism.
 
      The last dashboard selected will be represented on the top bar of the UI.
 
-
    .. figure:: images/10.png
 
 #. Explore the features available under the **Settings** page ( :fa:`cog` icon) and answer the following questions:
