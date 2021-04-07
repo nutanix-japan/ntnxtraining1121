@@ -1,12 +1,12 @@
 .. Adding labels to the beginning of your lab is helpful for linking to the lab from other pages
 .. _example_lab_8:
 
--------------
-Acropolis Block Service
--------------
+--------
+Volumes
+--------
 
 Deploying a Windows VM
-++++++++++++++++
+........................
 
 In this exercise you will deploy a **Windows 2012 R2** VM and create virtual machines for **iSCSI** configurations.
 
@@ -45,7 +45,7 @@ In this exercise you will deploy a **Windows 2012 R2** VM and create virtual mac
 #. When the virtual machine has been created, click **Power On** to start the virtual machine.
 
 Creating a Volume Group for Windows
-+++++++++++++++++++++++++++++++++++
+................................................
 
 In this exercise you will create a volume group in your cluster for your Windows VM. This volume group will contain the iSCSI targets that will be accessed by the Windows iSCSI client (initiator). The iSCSI initiator controls all command and data traffic within an iSCSI configuration.
 
@@ -92,7 +92,7 @@ In this exercise you will create a volume group in your cluster for your Windows
 #. Click **Save**.
 
 Configuring the Windows VM as an iSCSI Initiator
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+........................................................................
 
 In this exercise you will configure a **Windows 2012 VM** as an iSCSI initiator. The iSCSI initiator, also known as the iSCSI Client, controls all command and data traffic within an iSCSI configuration.
 
@@ -166,7 +166,7 @@ In this exercise you will configure a **Windows 2012 VM** as an iSCSI initiator.
 #. Click **OK** to exit the iSCSI configuration utility.
 
 Configuring a Windows VM for Access to a Volume Group
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+........................................................................
 
 In this exercise you will configure your **Windows 2012** virtual machine to discover and access the two virtual disks (targets) in the volume group that you created previously in this lab.
 
