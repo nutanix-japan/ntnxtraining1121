@@ -195,7 +195,11 @@ In this task you will use the nCLI shell to answer the following questions.
 
 #. Type the command that lists all the storage containers in the cluster. How many storage containers does the cluster have?
 
-#. Refer to the storage container named **default-container-#####** and answer the following questions:
+   .. code-block::
+
+    ncli container list
+
+#. Refer to the storage container named **SelfServiceContainer** and answer the following questions:
 
    How much free space is available in the storage container?
 
