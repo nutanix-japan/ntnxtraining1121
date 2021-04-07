@@ -86,7 +86,7 @@ In this exercise you will familiarise yourself with primary Nutanix interfaces s
 
    How much memory is allocated to each CVM?
 
-#. Click the :fa:`cog` icon, scroll through the Settings on the left, select SSL Certificate, and complete the table below:
+#. Click the :fa:`cog` icon, scroll through the Settings on the left, select SSL Certificate, and find the following information and make a note of it.
 
    Key Type:
    Signing Algorithm:
@@ -95,7 +95,7 @@ In this exercise you will familiarise yourself with primary Nutanix interfaces s
 
 #. Type the letter a in the search bar and click acknowledge alerts. You are automatically redirected to the Alerts dashboard.
 
-   .. figure:: images/9.png
+   .. figure:: images/8.png
 
 #. Moving the mouse cursor to any alert listed under the **Title** column reveals a hyperlink. Select any alert hyperlink. This switches you to the page dedicated to that alert.
 
@@ -117,7 +117,7 @@ In this exercise you will explore various views in Prism.
 
      The last dashboard selected will be represented on the top bar of the UI.
 
-   .. figure:: images/10.png
+   .. figure:: images/9.png
 
 #. Explore the features available under the **Settings** page ( :fa:`cog` icon) and answer the following questions:
 
@@ -130,12 +130,12 @@ In this exercise you will explore various views in Prism.
 
 #. Explore the functions available under the **User** menu (it will be labeled with the currently logged-in user, **admin**). The several **Download** selections open new tabs in your browser and require internet access.
 
-   .. figure:: images/11.png
+   .. figure:: images/10.png
 
 
 #. Now that you are familiar with the Prism management interface, return to the **Home** dashboard by clicking on the Nutanix logo (“**X**”) or by selecting **Home** from the **dashboard** menu.
 
-   .. figure:: images/12.png
+   .. figure:: images/11.png
 
 Using nCLI
 +++++++++++
@@ -156,6 +156,13 @@ In this task you will access the nCLI shell and perform basic commands.
 
 #. In the PuTTY Host Name (or IP address) field, type the IP Address of the any CVM from your Cluster General Information site. (Refer to Cluster Configuration Guide for the credentials detail.)
 
+   .. note::
+
+   	For Mac user, open Terminal, SSH to CVM IP using the same credential
+
+    .. code-block:: bash
+
+      ssh -l nutanix <CVM-IP-ADDRESS>
 
 #. From the command prompt, type ncli to enter the nCLI shell.
 
