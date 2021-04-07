@@ -197,7 +197,8 @@ In this task you will use the nCLI shell to answer the following questions.
 
    .. code-block::
 
-    ncli container list
+    ncli   
+    <ncli> container list
 
 #. Refer to the storage container named **SelfServiceContainer** and answer the following questions:
 
