@@ -78,7 +78,10 @@ In this exercise, you will work towards deploying Nutanix Move VM on a Nutanix A
 
    .. figure:: images/2.png
 
-#. Upgrade Move VM to latest version if there a pop-up requesting this. This should only take a few minutes. The option will popup or go to **Settings > Upgrade** to complete this step.
+#. **Important** Upgrade Move VM to latest version (if there a pop-up(on top left-hand corer of Move GUI) requesting this. This should only take a few minutes. The option will popup or go to **Settings > Upgrade** to complete this step.
+
+   .. figure:: image/move-upgrade.png
+
 
 Configuring Move
 ................................................
@@ -106,7 +109,7 @@ Configuring Move
 #. In the left panel, click **+ Add Target** and enter the following values:
 
    - Target Name: **<your cluster name>**
-   - Nutanix Environment: **<cluster external IP address> See Cluster Configuration Guide**
+   - Nutanix Environment: **<cluster VIP address> See Cluster Configuration Guide**
    - User Name: **admin**
    - Password: **Ask your instructor**
 
@@ -139,11 +142,11 @@ In this exercise, you will create a migration plan and initiate the migration.
 
 #. In the target, select **Target-<your cluster name>** as the destination of the migration.
 
-#. Select **default-container-#########** as your target container and click **NEXT** to proceed.
+#. Select **SelfServiceContainer** as your target container and click **NEXT** to proceed.
 
    .. figure:: images/9.png
 
-#. In **Select VMs** in step2 of the migration plan, please click on the + symbol beside the virtual machine of your name. On the right side of the screen, the selected source VM will appear in your screen.
+#. In **Select VMs** part of the migration plan, please click on the + symbol beside the virtual machine (Use Cluster Lookup for your VM name). On the right side of the screen, the selected source VM will appear in your screen.
 
    .. figure:: images/10.png
 
@@ -156,17 +159,17 @@ In this exercise, you will create a migration plan and initiate the migration.
 #. In **VM Preparation** step, key in the following parameters:
 
    - Preparation Mode: **Automatic**
-   - Credentials for Source VMs:  Under Windows VMs key in the **User Name** and **Password** (refer to Cluster Configuration Guide)
+   - Credentials for Source VMs:  Under Windows VMs key in the **User Name** and **P@ssw0rd!** (Use Cluster Lookup for your VM name)
    - Override Individual VM Settings: **Leave as default**
    - TimeZone: **Leave as Default**
    - Retain MAC Addresses from the Source VMs: **Ensure box is UNCHECKED**
-   - **Btpass Guest Operations on Source VMs: Ensure box is UNCHECKED**
+   - **Bypass Guest Operations on Source VMs: Ensure box is UNCHECKED**
    - Manage Settings for Individual VMs: Leave as Default
    - Schedule Data Seeding: **Ensure box is UNCHECKED**
 
 #. Click **NEXT**.
 
-#. Review your final settings in **Summary** page, and click **Save** and Start to proceed with the migration.
+#. Review your final settings in **Summary** page, and click **Save and Start** to proceed with the migration.
 
 #. Under **Migration Plans** page, you will be able to monitor the migration progress:
 
@@ -186,7 +189,7 @@ In this exercise, you will create a migration plan and initiate the migration.
 
 #. And once the Migration Status shows Completed, you should be able to view the target VM.
 
-#. Go into your Prism Element UI and you should view the newly migrated VM under the VM list.
+#. Go into your Prism Element UI and you should view the your migrated VM under the VM list.
 
    .. figure:: images/16.png
 
