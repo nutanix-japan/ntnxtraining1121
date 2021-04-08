@@ -18,15 +18,15 @@ In this exercise you will work individually to add a local (i.e. non-domain) use
 
    .. figure:: images/1.png
 
-#. Use the table below to complete the fields in the **Create User** window:
+#. Use the data below to complete the fields in the **Create User** window:
 
-   Field: **Value**
-   Username: **Your first name**
-   Last Name: **Your last name**
-   Email: **Your email address**
-   Password: **Use your full name with first letter capitalized and add /4u, eg:  Johnsmith/4u**
-   Language: **Your preferred language (e.g en-US)**
-   Roles: **Cluster Admin (You may need to scroll down)**
+   - Field: **Value**
+   - Username: **Your first name**
+   - Last Name: **Your last name**
+   - Email: **Your email address**
+   - Password: **Use your full name with first letter capitalized and add /4u, eg:  Johnsmith/4u**
+   - Language: **Your preferred language (e.g en-US)**
+   - Roles: **Cluster Admin (You may need to scroll down)**
 
 #. Click **Save**.
 

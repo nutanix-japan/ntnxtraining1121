@@ -22,12 +22,11 @@ Installing Move VM
 
 #. Click on **Upload Image** and enter the following values:
 
-   - **Name** Initials-MoveVM
+   - **Name** Initials-MoveImage
    - **Annotation** - (optional)
    - **Image Type** - Disk
-   - **Storage Container** - default-container-#########
-   - **From URL** -(Copy Download URL from `Nutanix Portal Downloads <https://portal.nutanix.com/page/downloads/list>`_
-   - **Alternative URL** - http://10.55.251.38/workshop_staging/move-3.6.0.qcow2
+   - **Storage Container** - SelfServiceContainer
+   - **URL** - http://10.42.194.11/workshop_staging/move-3.6.0.qcow2
 
 #. Once the image is ready, proceed to create Move VM
 
@@ -44,7 +43,7 @@ Installing Move VM
    - Select **+ Add New Disk**
    - **Type** - DISK
    - **Operation** - Clone from Image Service
-   - **Image** - CentOS7.qcow2
+   - **Image** - Initials-MoveImage
    - Select **Add**
 
    - Select **Add New NIC**

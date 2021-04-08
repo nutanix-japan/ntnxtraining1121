@@ -197,7 +197,7 @@ In this task you will use the nCLI shell to answer the following questions.
 
    .. code-block::
 
-    ncli   
+    ncli
     <ncli> container list
 
 #. Refer to the storage container named **SelfServiceContainer** and answer the following questions:
@@ -262,7 +262,7 @@ In this task you will create and delete a storage container using nCLI.
 
    .. code-block:: ncli
 
-     <ncli> container create name=cli-lastname sp-name=default-storage-pool-#####
+     <ncli> container create name=cli-lastname sp-name=SP01
 
    .. note::
 

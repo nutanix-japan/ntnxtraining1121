@@ -19,7 +19,7 @@ In this exercise you will create a new storage container with compression enable
    .. figure:: images/1.png
 
 #. In the upper-right corner of the browser window, click **+ Storage Container**.
-#. In the **Create Storage Container** window, type: **<your initials>-Compressed-Container** in the **Name** field.
+#. In the **Create Storage Container** window, type: **Initials-Compressed-Container** in the **Name** field.
 
    .. figure:: images/2.png
 
@@ -37,7 +37,7 @@ In this exercise you will create a new storage container without compression.
 
 #. In the upper right corner of the browser window, click **+ Storage Container**.
 
-#. In the **Create Storage Container** window, type: **<your initials>-NotCompressed-Container** in the Name field.
+#. In the **Create Storage Container** window, type: **Intials-NotCompressed-Container** in the Name field.
 
 #. Click **Save**.
 
@@ -59,11 +59,11 @@ This exercise is composed of the following tasks:
 Adding Two Virtual Disks to a Virtual Machine
 ................................................
 
-In this task you will clone a Windows VM and add two virtual disks. One virtual disk will be placed in the **<your initials>-Compressed-Container** and the other into the **<your initials>-NotCompressed-Container**.
+In this task you will clone a Windows VM and add two virtual disks. One virtual disk will be placed in the **Initials-Compressed-Container** and the other into the **Initials-NotCompressed-Container**.
 
 #. From the **VM** dashboard, **Table** view, clone **Windows 2012 VM** VM.
 #. Select the VM and click the **Clone** link.
-#. Change the name of the clone to **DSF-<your initials>** and click Save.
+#. Change the name of the clone to **DSF-Initials** and click Save.
 #. Power on the new VM.
 #. Dynamically add a new disk. Select the new VM and click the **Update** link from the option below the virtual machine table and scroll down to the **Disks** section.
 #. Click **+ Add New Disk**.
@@ -72,7 +72,7 @@ In this task you will clone a Windows VM and add two virtual disks. One virtual 
    Type: **Disk**
    Operation: **Allocate on Storage Container**
    Bus Type: **SCSI**
-   Storage Container: **<your initials>-Compressed-Container**
+   Storage Container: **Intials-Compressed-Container**
    Size (GiB): **10**
    Index: **Next Available**
 
@@ -80,7 +80,7 @@ In this task you will clone a Windows VM and add two virtual disks. One virtual 
 
    .. figure:: images/4.png
 
-#. Repeat the previous steps to add a second **10GB** virtual disk to the virtual machine with the second virtual disk placed into the **<your initials>-NotCompressed-Container**.
+#. Repeat the previous steps to add a second **10GB** virtual disk to the virtual machine with the second virtual disk placed into the **Initials-NotCompressed-Container**.
 #. Click **Save**.
 #. Scroll down (if required) in the **VM** dashboard and at the lower left, under **VM DETAILS**, verify the VM is utilizing three containers:
 
@@ -93,7 +93,7 @@ Formatting the New Virtual Disks
 
 In this task you will format the newly added virtual disks in your Windows virtual machine so that you can write a large file to each of the new virtual disks.
 
-#. Select your **DSF-<your initials>** VM and click **Launch Console**.
+#. Select your **DSF-Initials** VM and click **Launch Console**.
 
 #. In the upper right corner of the virtual machine console window, click the **Ctl-Alt-Del** icon to log on to your virtual machine as **Administrator** with the password **(See Cluster Configuration Guide)**.
 
@@ -144,7 +144,7 @@ Writing a Large File to Each New Virtual Disk
 
 In this task you will write a large file to each of the new disks using the (DOS)utility **fsutil**.
 
-#. Go to the **VM** dashboard and click **Launch Console** of your **DSF-<your initials>** VM.
+#. Go to the **VM** dashboard and click **Launch Console** of your **DSF-Initials** VM.
 
 #. Login to the Windows Desktop with the same password is initially created by the base Windows. Go to the **magnify glass** found at the bottom left of the window and type **cmd**.
 
@@ -188,15 +188,15 @@ In this task you will observe the result of container compression.
 
 #. Click **Table**, then select **Storage Container**.
 
-#. For the **<your initials>-Compressed-Container** and the **<your initials>-NotCompressed-Container**, look in the **Used** column and compare the amount of physical space used.
+#. For the **Initials-Compressed-Container** and the **Initials-NotCompressed-Container**, look in the **Used** column and compare the amount of physical space used.
    * Do you see a difference?
 
-   The **<your initials>-Compressed-Container** should be using significantly less space than the **<your initials>-NotCompressed-Container**.
+   The **Initials-Compressed-Container** should be using significantly less space than the **Initials-NotCompressed-Container**.
 
    .. figure:: images/11.png
 
-#. Click to select the **<your initials>-Compressed-Container**.
-#. Below the table of containers, on the left of the browser window, examine the values below the **Summary > <your initials>-Compressed-Container** box and answer the following questions:
+#. Click to select the **Initials-Compressed-Container**.
+#. Below the table of containers, on the left of the browser window, examine the values below the **Summary > Initials-Compressed-Container** box and answer the following questions:
 
    * Is compression turned on?
    * How much space has been saved due to compression?
@@ -208,4 +208,4 @@ In this task you will observe the result of container compression.
    * What is the current Data Reduction Ratio?
    * What is the difference between the Compressed-Container and the NotCompressedContainer for the Data Reduction Ratio?
 
-#. From the **VM** dashboard, remove the **DSF-<your initials>** VM by selecting the VM from the list and clicking Delete. Check the box to **delete** all snapshots.
+#. From the **VM** dashboard, remove the **DSF-Initials** VM by selecting the VM from the list and clicking Delete. Check the box to **delete** all snapshots.
