@@ -80,7 +80,7 @@ In this exercise, you will work towards deploying Nutanix Move VM on a Nutanix A
 
 #. **Important** Upgrade Move VM to latest version (if there a pop-up(on top left-hand corer of Move GUI) requesting this. This should only take a few minutes. The option will popup or go to **Settings > Upgrade** to complete this step.
 
-   .. figure:: image/move-upgrade.png
+   .. figure:: images/move-upgrade.png
 
 
 Configuring Move
@@ -93,10 +93,12 @@ Configuring Move
    .. figure:: images/3.png
 
 #. Enter the following values into the respective fields:
+
    - Source Name: **VMWare vCenter**
    - Environment Name: **Source**
-   - vCenter Server: **<vCenter IP Address> Ask your instructor**
-   - vCenter Password: **Ask your instructor**
+   - vCenter Server: shown as **vCenter IP Address** in your `Lookup <http://10.42.8.58:8090/>`_
+   - vCenter Username: shown as **vCenter Username** in your `Lookup <http://10.42.8.58:8090/>`_
+   - vCenter Password: shown as **vCenter Password** in your `Lookup <http://10.42.8.58:8090/>`_
 
    .. figure:: images/4.png
 
@@ -108,16 +110,16 @@ Configuring Move
 
 #. In the left panel, click **+ Add Target** and enter the following values:
 
-   - Target Name: **<your cluster name>**
-   - Nutanix Environment: **<cluster VIP address> See Cluster Configuration Guide**
+   - Target Name: shown as **<Cluster Name>** in your `Lookup <http://10.42.8.58:8090/>`_
+   - Nutanix Environment: shown as  **<Prism Element VIP>** in your `Lookup <http://10.42.8.58:8090/>`_
    - User Name: **admin**
-   - Password: **Ask your instructor**
+   - Password: shows as **Nutanix Password** in your `Lookup <http://10.42.8.58:8090/>`_
 
 #. Click **Add**.
 
    .. figure:: images/6.png
 
-#. In the new **Target <your cluster name>** card, click the **ellipsis (…)** in the upper right corner and in the presented menu choose **Refresh**. This will initiate a query to update Move with the latest changes in your Nutanix target cluster.
+#. In the new **Target <Cluster Name>** card, click the **ellipsis (…)** in the upper right corner and in the presented menu choose **Refresh**. This will initiate a query to update Move with the latest changes in your Nutanix target cluster.
 
 Configuring a Migration Plan
 ................................................
@@ -146,7 +148,7 @@ In this exercise, you will create a migration plan and initiate the migration.
 
    .. figure:: images/9.png
 
-#. In **Select VMs** part of the migration plan, please click on the + symbol beside the virtual machine (Use Cluster Lookup for your VM name). On the right side of the screen, the selected source VM will appear in your screen.
+#. In **Select VMs** part of the migration plan, please click on the + symbol beside the your source virtual machine shown as **Source VM Name** in your `Lookup <http://10.42.8.58:8090/>`_ . On the right side of the screen, the selected source VM will appear in your screen.
 
    .. figure:: images/10.png
 
@@ -159,7 +161,7 @@ In this exercise, you will create a migration plan and initiate the migration.
 #. In **VM Preparation** step, key in the following parameters:
 
    - Preparation Mode: **Automatic**
-   - Credentials for Source VMs:  Under Windows VMs key in the **User Name** and **P@ssw0rd!** (Use Cluster Lookup for your VM name)
+   - Credentials for Source VMs:  Under Windows VMs key in the **Source VM Username** and **Source VM Password** in your `Lookup <http://10.42.8.58:8090/>`_
    - Override Individual VM Settings: **Leave as default**
    - TimeZone: **Leave as Default**
    - Retain MAC Addresses from the Source VMs: **Ensure box is UNCHECKED**

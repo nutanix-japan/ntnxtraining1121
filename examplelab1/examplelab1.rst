@@ -8,9 +8,18 @@ Managing the Nutanix Cluster
 Conducting Prism Element Initial Setup
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Open a browser on your VDI session and enter the IP for your Cluster External IP Address shown in your lab guide. This is a floating IP that will run on one of your cluster CVMs. A **Security** page will be displayed, click **Advanced**, then click **Proceed to <IP> (unsafe)**
+Open a browser on your VDI session and enter the IP for your **Prism Element VIP** Address shown in your HPOC `Lookup <http://10.42.8.58:8090/>`_ .
+
+This is a floating IP that will run on one of your cluster CVMs.
+
+A **Security** page will be displayed, click **Advanced**, then click **Proceed to <IP> (unsafe)**
 
 .. figure:: images/1.png
+
+Login using the following credentials:
+
+- **User Name** - admin
+- **Password** - shown in your HPOC `Lookup <http://10.42.8.58:8090/>`_ as **Nutanix Password**
 
 You should now see the **Prism Home** page.
 
@@ -23,7 +32,7 @@ Configuring an NTP Server
 
 #. In the NTP Servers dialog box, review if there is any NTP server that has been added.
 
-#. Type **0.pool.ntp.org** and click **+ Add**
+#. If there are no NTP servers configured, type **0.pool.ntp.org** and click **+ Add**
 
    .. figure:: images/3.png
 
@@ -33,11 +42,17 @@ Configuring an NTP Server
 
    	For Mac user, open a terminal, SSH to CVM IP using the same credential
 
-   a.	Open the PuTTY utility on your virtual desktop.
+    For example use the following command in Mac Terminal
 
-   b.	In the **PuTTY Host Name (or IP address)** field, type the IP address of the first CVM from your lab handout.
+    .. code-block:: bash
 
-   c.	In the PuTTY terminal window, login using the default CVM credentials. user: **nutanix** and password: **<password> (Please refer to the Cluster Configuration Guide)**
+      ssh -l nutanix <CVM-IP-ADDRESS>
+
+   a.	Open the PuTTY utility on your Frame desktop.
+
+   b.	In the **PuTTY Host Name (or IP address)** field, type the IP address of the **Prism Element VIP** shown in `Lookup <http://10.42.8.58:8090/>`_.
+
+   c.	In the PuTTY terminal window, login using the default CVM credentials. user: **nutanix** and password: **<Nutanix Password>** shown in `Lookup <http://10.42.8.58:8090/>`_.
 
    d.	Once logged in, type the command:
 
@@ -78,9 +93,13 @@ In this exercise you will familiarise yourself with primary Nutanix interfaces s
 
    .. figure:: images/7.png
 
-   Are there any VMs listed? If so, what VMs are they? If not, why not?
+   Are there any VMs listed? If so, what VMs are they?
 
 #. At the upper-middle-right of the **VM Dashboard** page, click to select the **Include Controller VMs** check box and answer the following questions:
+
+   Can you identify which VM is used for Nutanix Controller?
+
+   Why is there only ONE CVM?
 
    How many cores are allocated to each CVM?
 
@@ -96,6 +115,8 @@ In this exercise you will familiarise yourself with primary Nutanix interfaces s
 #. Type the letter a in the search bar and click acknowledge alerts. You are automatically redirected to the Alerts dashboard.
 
    .. figure:: images/8.png
+
+   How many alerts are there?
 
 #. Moving the mouse cursor to any alert listed under the **Title** column reveals a hyperlink. Select any alert hyperlink. This switches you to the page dedicated to that alert.
 
@@ -113,10 +134,6 @@ In this exercise you will explore various views in Prism.
 
 #. Click the **dashboard** drop down menu and select each of the dashboards in turn. Note which dashboards have a **Table** view, an **Overview** view, and/or a **Diagram** view.
 
-   .. note::
-
-     The last dashboard selected will be represented on the top bar of the UI.
-
    .. figure:: images/9.png
 
 #. Explore the features available under the **Settings** page ( :fa:`cog` icon) and answer the following questions:
@@ -125,13 +142,19 @@ In this exercise you will explore various views in Prism.
 
    What is the IP of the current name server (Name Servers)?
 
-#. Click the cluster name at the top-left corner of the UI and review the **Cluster Details** window.
+   How many networks are configured for this Single Node cluster?
 
+   What is the Virtual IP address of the cluster?
+
+   What’s the differences between a Virtual IP and the CVM IP?
+
+   What do you think the iSCSI Data service IP is used for?  We will use this for Volume constructs.
+
+#. Click the cluster name at the top-left corner of the UI and review the **Cluster Details** window.
 
 #. Explore the functions available under the **User** menu (it will be labeled with the currently logged-in user, **admin**). The several **Download** selections open new tabs in your browser and require internet access.
 
    .. figure:: images/10.png
-
 
 #. Now that you are familiar with the Prism management interface, return to the **Home** dashboard by clicking on the Nutanix logo (“**X**”) or by selecting **Home** from the **dashboard** menu.
 
@@ -153,8 +176,7 @@ Accessing nCLI and Using Basic Commands
 
 In this task you will access the nCLI shell and perform basic commands.
 
-
-#. In the PuTTY Host Name (or IP address) field, type the IP Address of the any CVM from your Cluster General Information site. (Refer to Cluster Configuration Guide for the credentials detail.)
+#. In the PuTTY Host Name (or IP address) field, type the IP Address of the CVM from your HPOC lookup. Login as Nutanix User and the **Nutanix Password** shown in your HPOC `Lookup <http://10.42.8.58:8090/>`_ .
 
    .. note::
 
@@ -262,12 +284,7 @@ In this task you will create and delete a storage container using nCLI.
 
    .. code-block:: ncli
 
-     <ncli> container create name=cli-lastname sp-name=SP01
-
-   .. note::
-
-    Where ##### is the cluster ID based on what you discovered in the previous step. <lastname> is your surname.
-
+     <ncli> container create name=cli-container-<lastname> sp-name=SP01
 
 #. From the Prism UI, click the **Dashboard** menu and go to **Storage > Table > Storage Container** to confirm the container is created.
 
