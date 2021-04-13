@@ -55,7 +55,7 @@ Building a Windows Virtual Machine
       - **Image** – Windows 2012
       - Select **Add**
 
-#. This will add a disk containing the Windows boot media.
+#. This will add a NIC.
 
    * **Select Add New NIC**
       - VLAN Name – **<Your-Intials>-Unmanaged Client Network**
