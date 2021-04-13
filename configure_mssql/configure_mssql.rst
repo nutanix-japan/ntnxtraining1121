@@ -82,7 +82,7 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 #. Login using the following credentials:
 
    - **Username** - admin
-   - **Password** - `<CLUSTER-PASSWORD>`
+   - **Password** - **Password** - shown in your HPOC `Lookup <http://10.42.8.58:8090/>`_ as **Nutanix Password**
 
 #. From the dropdown menu, select **Administration**.
 
@@ -144,7 +144,7 @@ You must meet the following Era requirements before you register a SQL Server da
 
 #. Click **+ Register > Microsoft SQL Server > Single Node Server VM** and fill out the following fields:
 
-   - **IP Address or Name of VM** - *UserXX*\ **-MSSQLSourceVM**
+   - **IP Address or Name of VM** - *User01*\ **-MSSQLSourceVM**
    - **Windows Administrator Name** - Administrator
    - **Windows Administrator Password** - Nutanix/4u
    - **Instance** - MSSQLSERVER (This should auto-populate after providing credentials)

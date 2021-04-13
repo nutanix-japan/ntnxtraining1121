@@ -24,7 +24,7 @@ In this exercise you will create an unmanaged network.
 
    * Name: **<Your-Intials>-Unmanaged Client Network**
 
-   * VLAN ID: **<Refer to Cluster Configuration Information>**
+   * VLAN ID: **0**
 
    * Enable IP address Management: **Leave unchecked**
 

@@ -20,8 +20,8 @@ In this exercise you will work individually to add a local (i.e. non-domain) use
 
 #. Use the data below to complete the fields in the **Create User** window:
 
-   - Field: **Value**
-   - Username: **Your first name**
+   - Username: **Your user name**
+   - First Name: **Your first name**
    - Last Name: **Your last name**
    - Email: **Your email address**
    - Password: **Use your full name with first letter capitalized and add /4u, eg:  Johnsmith/4u**

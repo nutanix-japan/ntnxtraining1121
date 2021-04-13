@@ -60,11 +60,13 @@ Building a Windows Virtual Machine
    * **Select Add New NIC**
       - VLAN Name – **<Your-Intials>-Unmanaged Client Network**
       - Select **Add**
-This will add a single virtual NIC to the VM on the selected Virtual  Network
+
+   This will add a single virtual NIC to the VM on the selected Virtual  Network
 
 #. Click **Save** to create the VM.
 
    .. note::
+
     At the following URL you can find the supported Operating Systems: https://portal.nutanix.com/page/documents/compatibility-matrix/guestos
 
 #. Select the VM, then click **Power On** from the list of action links (below the table) to turn on the VM.
@@ -104,13 +106,16 @@ In this exercise you will create a CentOS VM from an existing, pre-installed dis
    * **Number of Cores per vCPU** - 1
    * **Memory** - 4 GiB
    * Select **+ Add New Disk**
+
      - **Type** – Disk
      - **Operation** - Clone from Image Service
      - **Image** – CentOS
      - Select **Add**
      - Boot Configuration
      - Leave the default selected **Legacy Boot**
+     
    * Select **Add New NIC**
+
      - **VLAN Name** - Unmanaged
      - Select **Add**
 
