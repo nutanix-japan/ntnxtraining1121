@@ -47,7 +47,7 @@ Building a Windows Virtual Machine
    ..    - **Image** – Virt IO
    ..    - Select **Update**
 
-#. This will mount the Windows Server ISO from the Image Service for boot/installation
+#. This will mount the Windows Server DISK from the Image Service for boot/installation
 
    * **Select** + **Add New** Disk
       - **Type** - DISK
