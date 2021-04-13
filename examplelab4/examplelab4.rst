@@ -77,8 +77,6 @@ Building a Windows Virtual Machine
 
    .. figure:: images/1.png
 
-   .. figure:: images/2.png
-
 #. Following OS installation you can complete the Nutanix Guest Tools (NGT) installation by selecting the VM in Prism and clicking Manage Guest Tools > Enable Nutanix Guest Tools > Mount Guest Tools,and clicking Submit.
 
    This will use the virtual CD-ROM device to mount the NGT installation ISO to the VM. NGT includes the previously installed VirtIO drivers, as well as services to support Self-Service File Restore (SSR) and Application Consistent (VSS) snapshots.
@@ -158,5 +156,5 @@ In this task, you will add a CPU and increase the amount of Memory on your Windo
 
 #. Observe the change in the VM Dashboard for your VM. The Core column will change from **2** to **4** (two VCPUs with two cores each).
 
-   . Repeat the update process and change the Memory from **4** to **8**.
+   - Repeat the update process and change the Memory from **4** to **8**.
  
