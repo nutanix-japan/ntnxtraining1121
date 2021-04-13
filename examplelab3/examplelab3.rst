@@ -5,6 +5,27 @@
 Networking
 -------------
 
+Review Existing Primary Client Network
++++++++++++++++++++++++++++++++++++++++
+
+#. Log on to your cluster’s Prism UI (Element) as the **admin** user.
+
+#. Click the **gear** icon, scroll down in **Settings** to the **Network** section and click **Network Configuration**.
+
+#. Click **Virtual Networks** if not already selected.
+
+#. Click on the **pen** icon on the Primary network
+
+#. Note the following fields for the Primary Network. You can review the description on each field with the ? icon
+
+   - Name: Primary
+   - VLAN ID: < The default VLAN ID is always 0 >
+   - IP address Management: ENABLED
+   - IP address Pools
+   - Override DHCP server
+
+#. Click **Cancel** at the bottom of the screen to return to the Networking menu.
+
 Creating an Unmanaged Client Network
 ++++++++++++++++++++++++++++++++++++
 
@@ -15,8 +36,6 @@ In this exercise you will create an unmanaged network.
 #. Click the **gear** icon, scroll down in **Settings** to the **Network** section and click **Network Configuration**.
 
 #. Click **Virtual Networks** if not already selected.
-
-   .. figure:: images/1.png
 
 #. Click **Create Network**
 

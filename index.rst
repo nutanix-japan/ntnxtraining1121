@@ -61,13 +61,13 @@
    webtier/webtier
    patch_sql/patch_sql
 
-.. toctree::
-  :maxdepth: 2
-  :caption: Appendix
-  :name: _appendix
-  :hidden:
-
-  appendix/appendix
+.. .. toctree::
+..   :maxdepth: 2
+..   :caption: Appendix
+..   :name: _appendix
+..   :hidden:
+..
+..   appendix/appendix
 
 .. _getting_started:
 
@@ -135,7 +135,7 @@ Initial Setup
 Cluster assignment
 ++++++++++++++++++
 
-Your cluster assignments can be found in `Lookup <http://10.42.8.58:8090/>`_. Enter your registered email address to find your details
+Your cluster assignments can be found in `Lookup <http://lookup-apac.ntnxworkshops.com/>`_. Enter your registered email address to find your details
 
 .. .. note::
 ..   If these are Single Node Clusters (SNCs) pay close attention on the networking part. The SNCs are completely different setup and configured compared to the "normal" three/four node clusters
@@ -350,7 +350,7 @@ Login to: https://console.nutanix.com/x/labs
 
 .. **Nutanix Employees** - Use your **NUTANIXDC** credentials
 
-Go to HPOC `Lookup <http://10.42.8.58:8090/>`_ here to get your login credentials for Frame user, and cluster details.
+Go to HPOC `Lookup <http://lookup-apac.ntnxworkshops.com/>`_ here to get your login credentials for Frame user, and cluster details.
 
 **Non-Employees** - Use **Lab Access User** Credentials
 
@@ -381,7 +381,7 @@ For PHX:
 - **Name** - X-Labs - PHX
 - **Server URL** - xlv-uswest1.nutanix.com
 
-Go to HPOC `Lookup <http://10.42.8.58:8090/>`_ here to get your login credentials for Frame user, and cluster details.
+Go to HPOC `Lookup <http://lookup-apac.ntnxworkshops.com/>`_ here to get your login credentials for Frame user, and cluster details.
 
 Login to VPN to access your HPOC environment to do the labs.
 

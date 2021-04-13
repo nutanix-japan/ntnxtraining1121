@@ -42,10 +42,10 @@ Building a Windows Virtual Machine
    * **vCPU(s)** - 2
    * **Number of Cores per vCPU** - 1
    * **Memory** - 4 GiB
-   * Select   next to CDROM
-      - **Operation** - Clone from Image Service
-      - **Image** – Virt IO
-      - Select **Update**
+   .. * Select next to CDROM
+   ..    - **Operation** - Clone from Image Service
+   ..    - **Image** – Virt IO
+   ..    - Select **Update**
 
 #. This will mount the Windows Server ISO from the Image Service for boot/installation
 
@@ -113,10 +113,10 @@ In this exercise you will create a CentOS VM from an existing, pre-installed dis
      - Select **Add**
      - Boot Configuration
      - Leave the default selected **Legacy Boot**
-     
+
    * Select **Add New NIC**
 
-     - **VLAN Name** - Unmanaged
+     - **VLAN Name** - Primary
      - Select **Add**
 
 #. Click **Save** to create the VM.

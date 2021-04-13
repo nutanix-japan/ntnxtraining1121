@@ -8,7 +8,7 @@ Managing the Nutanix Cluster
 Conducting Prism Element Initial Setup
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Open a browser on your VDI session and enter the IP for your **Prism Element VIP** Address shown in your HPOC `Lookup <http://10.42.8.58:8090/>`_ .
+Open a browser on your VDI session and enter the IP for your **Prism Element VIP** Address shown in your HPOC `Lookup <http://lookup-apac.ntnxworkshops.com/>`_ .
 
 This is a floating IP that will run on one of your cluster CVMs.
 
@@ -19,7 +19,7 @@ A **Security** page will be displayed, click **Advanced**, then click **Proceed 
 Login using the following credentials:
 
 - **User Name** - admin
-- **Password** - shown in your HPOC `Lookup <http://10.42.8.58:8090/>`_ as **Nutanix Password**
+- **Password** - shown in your HPOC `Lookup <http://lookup-apac.ntnxworkshops.com/>`_ as **Nutanix Password**
 
 You should now see the **Prism Home** page.
 
@@ -50,9 +50,9 @@ Configuring an NTP Server
 
    a.	Open the PuTTY utility on your Frame desktop.
 
-   b.	In the **PuTTY Host Name (or IP address)** field, type the IP address of the **Prism Element VIP** shown in `Lookup <http://10.42.8.58:8090/>`_.
+   b.	In the **PuTTY Host Name (or IP address)** field, type the IP address of the **Prism Element VIP** shown in `Lookup <http://lookup-apac.ntnxworkshops.com/>`_.
 
-   c.	In the PuTTY terminal window, login using the default CVM credentials. user: **nutanix** and password: **<Nutanix Password>** shown in `Lookup <http://10.42.8.58:8090/>`_.
+   c.	In the PuTTY terminal window, login using the default CVM credentials. user: **nutanix** and password: **<Nutanix Password>** shown in `Lookup <http://lookup-apac.ntnxworkshops.com/>`_.
 
    d.	Once logged in, type the command:
 
@@ -176,7 +176,7 @@ Accessing nCLI and Using Basic Commands
 
 In this task you will access the nCLI shell and perform basic commands.
 
-#. In the PuTTY Host Name (or IP address) field, type the IP Address of the CVM from your HPOC lookup. Login as Nutanix User and the **Nutanix Password** shown in your HPOC `Lookup <http://10.42.8.58:8090/>`_ .
+#. In the PuTTY Host Name (or IP address) field, type the IP Address of the CVM from your HPOC lookup. Login as Nutanix User and the **Nutanix Password** shown in your HPOC `Lookup <http://lookup-apac.ntnxworkshops.com/>`_ .
 
    .. note::
 

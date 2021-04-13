@@ -96,9 +96,9 @@ Configuring Move
 
    - Source Name: **VMWare vCenter**
    - Environment Name: **Source**
-   - vCenter Server: shown as **vCenter IP Address** in your `Lookup <http://10.42.8.58:8090/>`_
-   - vCenter Username: shown as **vCenter Username** in your `Lookup <http://10.42.8.58:8090/>`_
-   - vCenter Password: shown as **vCenter Password** in your `Lookup <http://10.42.8.58:8090/>`_
+   - vCenter Server: shown as **vCenter IP Address** in your `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
+   - vCenter Username: shown as **vCenter Username** in your `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
+   - vCenter Password: shown as **vCenter Password** in your `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
 
    .. figure:: images/4.png
 
@@ -110,10 +110,10 @@ Configuring Move
 
 #. In the left panel, click **+ Add Target** and enter the following values:
 
-   - Target Name: shown as **<Cluster Name>** in your `Lookup <http://10.42.8.58:8090/>`_
-   - Nutanix Environment: shown as  **<Prism Element VIP>** in your `Lookup <http://10.42.8.58:8090/>`_
+   - Target Name: shown as **<Cluster Name>** in your `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
+   - Nutanix Environment: shown as  **<Prism Element VIP>** in your `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
    - User Name: **admin**
-   - Password: shows as **Nutanix Password** in your `Lookup <http://10.42.8.58:8090/>`_
+   - Password: shows as **Nutanix Password** in your `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
 
 #. Click **Add**.
 
@@ -148,7 +148,7 @@ In this exercise, you will create a migration plan and initiate the migration.
 
    .. figure:: images/9.png
 
-#. In **Select VMs** part of the migration plan, please click on the + symbol beside the your source virtual machine shown as **Source VM Name** in your `Lookup <http://10.42.8.58:8090/>`_ . On the right side of the screen, the selected source VM will appear in your screen.
+#. In **Select VMs** part of the migration plan, please click on the + symbol beside the your source virtual machine shown as **Source VM Name** in your `Lookup <http://lookup-apac.ntnxworkshops.com/>`_ . On the right side of the screen, the selected source VM will appear in your screen.
 
    .. figure:: images/10.png
 
@@ -161,7 +161,7 @@ In this exercise, you will create a migration plan and initiate the migration.
 #. In **VM Preparation** step, key in the following parameters:
 
    - Preparation Mode: **Automatic**
-   - Credentials for Source VMs:  Under Windows VMs key in the **Source VM Username** and **Source VM Password** in your `Lookup <http://10.42.8.58:8090/>`_
+   - Credentials for Source VMs:  Under Windows VMs key in the **Source VM Username** and **Source VM Password** in your `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
    - Override Individual VM Settings: **Leave as default**
    - TimeZone: **Leave as Default**
    - Retain MAC Addresses from the Source VMs: **Ensure box is UNCHECKED**
