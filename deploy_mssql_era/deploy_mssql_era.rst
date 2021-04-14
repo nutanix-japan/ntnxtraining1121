@@ -121,9 +121,9 @@ Exploring the Provisioned DB Server
    - **User Name** - NTNXLAB\\Administrator
    - **Password** - nutanix/4u
 
-#. Cancel *Shutdown Event Tracker*.
+#. Cancel *Shutdown Event Tracker*. (if not already done)
 
-#. Disable Windows Firewall for all networks.
+#. Disable Windows Firewall for all networks. (if not already done)
 
 #. Open **Start > Run > diskmgmt.msc** to view the in-guest disk layout. Right-click an unlabeled volume and select **Change Drive Letter and Paths** to view the path to which Era has mounted the volume. Note there are dedicated drives corresponding to SQL data and log locations, similar to the original SQL Server to which you manually applied best practices.
 
