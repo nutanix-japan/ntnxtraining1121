@@ -3,6 +3,7 @@
 ----------------------
 Patching Microsoft SQL
 ------------------------
+
 In this lab you will patch your existing *UserXX*\ -MSSQLSourceVM.
 
 Activities include:
