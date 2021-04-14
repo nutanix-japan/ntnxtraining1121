@@ -34,8 +34,8 @@ Software Profile Versions are created in Era to support patching of SQL Server d
    - **Name** *Initials*\ -SQL2016_SP1_CU15
    - **Patch File Location** - File Share
    - **File Share** - ``\\10.42.194.11\workshop_staging\era\SQLServer\MSSQL_Patches\SQLServer2016-KB4495257-x64.exe``
-   - **User Name** - PHX-SPOCxxx-x-User01 (up to PHX-SPOCxxx-x-User05)
-   - **Password** - `<CLUSTER-PASSWORD>`
+   - **User Name** - shown as **FRAME Username** your HPOC `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
+   - **Password** - shown as **FRAME Password** your HPOC `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
 
       .. figure:: images/2.png
 

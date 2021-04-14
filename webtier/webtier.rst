@@ -13,6 +13,10 @@ In this lab you will leverage multiple pre-built Calm Blueprints to provision yo
 
    .. figure:: images/pc.png
 
+   .. note::
+
+   	Prism Central will be different for your cluster.
+    
 #. Within *Prism Central*, select :fa:`bars` **> Services > Calm**.
 
 #. Select **Projects** from the left-hand menu, and then click **+ Create Project**.
@@ -34,6 +38,8 @@ In this lab you will leverage multiple pre-built Calm Blueprints to provision yo
 
    .. figure:: images/3.png
 
+#. Click on **Save & Configure Environment**
+
 #. Proceed to the next section.
 
 Provision Fiesta Web Tier
@@ -41,7 +47,7 @@ Provision Fiesta Web Tier
 
 In this section you'll deploy the web tier of the application and connect it to your production database.
 
-#. `Download the Fiesta Blueprint by right-clicking here <https://raw.githubusercontent.com/nutanixworkshops/EraWithMSSQL/master/webtier/FiestaNoDB.json>`_. This single-VM Blueprint is used to provision only the web tier portion of the application.
+#. Download the `Fiesta Blueprint by right-clicking here <https://raw.githubusercontent.com/nutanixworkshops/EraWithMSSQL/master/webtier/FiestaNoDB.json>`_. This single-VM Blueprint is used to provision only the web tier portion of the application.
 
 #. Within *Prism Central*, select :fa:`bars` **> Services > Calm**. Select **Blueprints** from the left-hand menu, and click **Upload Blueprint**.
 
