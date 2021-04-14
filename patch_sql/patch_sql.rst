@@ -23,9 +23,9 @@ Links
 
 .. note::
 
-   In this workshop, we will guide you through creating a software profile within the SP1 "track" (our unofficial description). You may also create additional software profiles within the SP2 "track". These individual "tracks" require those SP as a base, and any higher level CU can be applied afterwards. In the example below, we are showing the SP1 "track". SP1 (build 13.0.4001.0) is where you will begin, and create a software profile to update to CU15 (build 13.0.4574.0). For reference, you could also use any CU in between the SP and the latest CU. Any profile you create must be a higher version than previous, otherwise that profile will fail to create. For example, if you create a profile for SP1-CU9, and then attempt to create another for SP1-CU3, it will fail.
+  In this workshop, we will guide you through creating a software profile within the SP1 "track" (our unofficial description). You may also create additional software profiles within the SP2 "track". These individual "tracks" require those SP as a base, and any higher level CU can be applied afterwards. In the example below, we are showing the SP1 "track". SP1 (build 13.0.4001.0) is where you will begin, and create a software profile to update to CU15 (build 13.0.4574.0). For reference, you could also use any CU in between the SP and the latest CU. Any profile you create must be a higher version than previous, otherwise that profile will fail to create. For example, if you create a profile for SP1-CU9, and then attempt to create another for SP1-CU3, it will fail.
 
-      .. figure:: images/1.png
+  .. figure:: images/1.png
 
 Creating a Software Profile Version
 +++++++++++++++++++++++++++++++++++++
