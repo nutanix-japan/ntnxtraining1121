@@ -9,6 +9,7 @@ In this lab you will patch your existing *UserXX*\ -MSSQLSourceVM.
 Activities include:
 
 - Creating a new Software Profile version to include a SQL patch file
+- Publishing the new Software Profile version
 - Patching your source MSSQL VM
 
 About MSSQL Patches
