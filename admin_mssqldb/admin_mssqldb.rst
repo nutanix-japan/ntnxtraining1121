@@ -52,7 +52,10 @@ Before we take a manual snapshot of our Database, let's write a new table into S
 Write New Table Into Database
 .............................
 
-#. RDP/Console into your *UserXX*\ **-MSSQLSourceVM**.
+#. RDP/Console into your *UserXX*\ **-MSSQLSourceVM** using the following Credentials
+
+   - **Windows Administrator Name** - Administrator
+   - **Windows Administrator Password** - Nutanix/4u
 
 #. Open SQL Server Managment Studio (SSMS), choose **Windows Authentication** from the *Authentication* dropdown, and click **Connect**.
 
@@ -134,7 +137,10 @@ There are times when a table or other data gets deleted (by accident), and you w
 Delete Table
 ............
 
-#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM.
+#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM using the following Credentials
+
+   - **Windows Administrator Name** - Administrator
+   - **Windows Administrator Password** - Nutanix/4u
 
 #. Open SQL Server Managment Studio (SSMS), choose **Windows Authentication** from the *Authentication* dropdown, and click **Connect**.
 

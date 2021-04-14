@@ -9,6 +9,10 @@ Configuring a Project
 
 In this lab you will leverage multiple pre-built Calm Blueprints to provision your applications.
 
+#. From your Prism Element Dashboard, get to your Prism Central by clicking on the widget on as shown here.
+
+   .. figure:: images/pc.png
+
 #. Within *Prism Central*, select :fa:`bars` **> Services > Calm**.
 
 #. Select **Projects** from the left-hand menu, and then click **+ Create Project**.
@@ -16,8 +20,6 @@ In this lab you will leverage multiple pre-built Calm Blueprints to provision yo
    .. figure:: images/2.png
 
 #. Fill out the following fields:
-
-.. note:: If you are using a Single Node Cluster (SNC), only a Primary network will be available to you. In this case, ignore any references to the Secondary network, and instead use the Primary network.
 
    - **Project Name** - *Initials*\ -Project
    - Within *Users, Groups, and Roles* section, click **+user** (right side)

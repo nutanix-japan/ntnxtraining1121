@@ -13,7 +13,7 @@ You've completed all the one time operations required to be able to provision an
 
 #. Within **Era**, select **Databases** from the dropdown menu, and **Sources** from the left-hand menu.
 
-#. Click **+ Provision > Microsoft SQL Server > Database**.
+#. Click **+ Provision > Microsoft SQL Server > Database**. Although we are choosing **Database** option here, this will allow us to create a Database Server to host the database.
 
    .. figure:: images/18.png
 
@@ -120,6 +120,10 @@ Exploring the Provisioned DB Server
 
    - **User Name** - NTNXLAB\\Administrator
    - **Password** - nutanix/4u
+
+#. Cancel *Shutdown Event Tracker*.
+
+#. Disable Windows Firewall for all networks.
 
 #. Open **Start > Run > diskmgmt.msc** to view the in-guest disk layout. Right-click an unlabeled volume and select **Change Drive Letter and Paths** to view the path to which Era has mounted the volume. Note there are dedicated drives corresponding to SQL data and log locations, similar to the original SQL Server to which you manually applied best practices.
 
