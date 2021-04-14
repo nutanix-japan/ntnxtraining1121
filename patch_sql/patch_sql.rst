@@ -5,6 +5,14 @@ Patching Microsoft SQL
 ------------------------
 In this lab you will patch your existing *UserXX*\ -MSSQLSourceVM.
 
+Activities include:
+
+- Creating a new Software Profile version to include a SQL patch file
+- Patching your source MSSQL VM
+
+About MSSQL Patches
++++++++++++++++++++++++++++++++++++
+
 Links
 
    - `KB3177312 - SQL Server 2016 build versions <https://support.microsoft.com/en-us/help/3177312/kb3177312-sql-server-2016-build-versions>`_ - Refer to this article for Service Pack (SP) and Cumulative Update (CU) information. Please note that Microsoft has depricated the use of the term *Service Pack* on SQL versions after 2016.
@@ -18,7 +26,7 @@ Links
       .. figure:: images/1.png
 
 Creating a Software Profile Version
-+++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++
 
 Software Profile Versions are created in Era to support patching of SQL Server database server instances. A Software Profile Version can be created simply by uploading a SQL Server update executable. The SQL Server update can then be used to patch other database server VMs or when provisioning new database server VMs with the updated Software Profile.
 
