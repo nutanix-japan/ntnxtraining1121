@@ -15,8 +15,8 @@ In this lab you will leverage multiple pre-built Calm Blueprints to provision yo
 
    .. note::
 
-   	Prism Central will be different for your cluster.
-    
+   	Prism Central IP address will be different for your cluster.
+
 #. Within *Prism Central*, select :fa:`bars` **> Services > Calm**.
 
 #. Select **Projects** from the left-hand menu, and then click **+ Create Project**.
