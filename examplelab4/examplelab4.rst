@@ -121,7 +121,7 @@ In this exercise you will create a CentOS VM from an existing, pre-installed dis
 
 #. Launch the console to see the VM being started.
 
-#. Login with root and the credentials provided in the Cluster General Information site.
+#. Login with root and the **O/S password** shown in your HPOC `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
 
 #. Shutdown CentOS by typing the following:
 
