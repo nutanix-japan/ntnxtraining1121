@@ -173,7 +173,7 @@ In this exercise, you will create a migration plan and initiate the migration.
 
 #. Review your final settings in **Summary** page, and click **Save and Start** to proceed with the migration.
 
-#. Under **Migration Plans** page, you will be able to monitor the migration progress:
+#. Under **Migration Plans** page, you will be able to monitor the migration progress(this will take up to 15-25 minutes):
 
    .. figure:: images/12.png
 
