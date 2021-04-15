@@ -72,7 +72,7 @@ In this exercise, you will work towards deploying Nutanix Move VM on a Nutanix A
    .. figure:: images/1.png
 
 #. Click **OK** in the **Customer Experience Program** popup window.
-#. Set a new password for the **nutanix** user. Set the password as **Nutanix/4u** with the CAP letter N).
+#. Set a new password for the **nutanix** user. Set the password as **Nutanix/4u** (with the CAP letter N).
 #. Log on using the new user and password.
 #. In the Move Supports dialog bog, click Continue.
 
