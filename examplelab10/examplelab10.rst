@@ -66,9 +66,7 @@ In this exercise you will work individually to configure a protection domain to 
 
 #. In the **Protection Domain** table, click to select your **protection domain**.
 
-#. In the lower left side of the **Protection** dashboard, look at the **PROTECT DOMAIN
-
-   DETAILS** box and verify the **Protection Domain** mode is **Active**.
+#. In the lower left side of the **Protection** dashboard, look at the **PROTECT DOMAIN DETAILS** box and verify the **Protection Domain** mode is **Active**.
 
    .. figure:: images/6.png
 
