@@ -87,7 +87,7 @@ Configuring Move
 ................................................
 
 #. The **Move** dashboard displays **Source Environments**, **Target Environments** and **Migration Plans**.
-#. On the upper left side of the Move UI, click **+ Add Source**.
+#. On the upper left side of the Move UI, click **+ Add Environment**.
 #. In the **Add Source Environment** dialog box, select **VMware ESXi**.
 
    .. figure:: images/3.png
@@ -108,7 +108,7 @@ Configuring Move
 
     .. figure:: images/5.png
 
-#. In the left panel, click **+ Add Target** and enter the following values:
+#. In the left panel, click **+ Add Environment** and enter the following values:
 
    - Target Name: shown as **<Cluster Name>** in your `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
    - Nutanix Environment: shown as  **<Prism Element VIP>** in your `Lookup <http://lookup-apac.ntnxworkshops.com/>`_
