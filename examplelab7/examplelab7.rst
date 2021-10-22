@@ -16,7 +16,7 @@ Deploy this VM on your assigned cluster if directed to do so as part of **Lab Se
 Installing Move VM
 ................................................
 
-#. Login to you Prism Element
+#. Login to you Prism Element in your reserved HPOC
 
 #. Upload an Move image using **Settings > Image Configuration**
 
@@ -38,7 +38,7 @@ Installing Move VM
    - **Description** - (Optional) Description for your VM.
    - **vCPU(s)** - 1
    - **Number of Cores per vCPU** - 2
-   - **Memory** - 2 GiB
+   - **Memory** - 8 GiB
 
    - Select **+ Add New Disk**
    - **Type** - DISK
