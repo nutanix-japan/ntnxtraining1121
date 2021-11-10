@@ -1,249 +1,286 @@
-.. Adding labels to the beginning of your lab is helpful for linking to the lab from other pages
-.. _example_lab_8:
 
---------
+.. _volumes_deploy:
+
+-----------------------
 Volumes
---------
+-----------------------
 
-Deploying a Windows VM
-........................
+Overview
+++++++++
 
-In this exercise you will deploy a **Windows 2012 R2** VM and create virtual machines for **iSCSI** configurations.
+.. note::
 
-#. From the Prism VM dashboard, select **+ Create VM**. Fill out the following:
+  Estimated time to complete: **30 Minutes**
 
-   Name: **<your_initials>-iscci-Win**
+The Nutanix Volumes feature (previously know as Acropolis Volumes) exposes back-end DSF storage to external consumers (guest OS, physical hosts, containers, etc.) via iSCSI.
 
-   VCPU(s): **1**
+This allows any operating system to access DSF and leverage its storage capabilities.  In this deployment scenario, the OS is talking directly to Nutanix bypassing any hypervisor.
 
-   Number of Cores Per VCPU: **2**
+Core use-cases for Acropolis Volumes:
 
-   Memory: **4**
+- Shared Disks
+- Oracle RAC, Microsoft Failover Clustering, etc.
+- Disks as first-class entities
+- Where execution contexts are ephemeral and data is critical
+- Containers, OpenStack, etc.
+- Guest-initiated iSCSI
+- Bare-metal consumers
+- Exchange on vSphere (for Microsoft Support)
 
-#. Scroll down to the Disks section and Select **+ Add New Disk**.
+Lab Setup
++++++++++
 
-   Type: **Disk**
+This lab requires applications provisioned as part of the :ref:`windows_tools_vm` and :ref:`linux_tools_vm`.
 
-   Operation: **Clone from Image Service**
+If you have not yet deployed these VMs, see the linked steps above before proceeding with the lab.
 
-   Bus Type: Leave at default
+Configure Acropolis Block Services
+++++++++++++++++++++++++++++++++++++++++++++
 
-   Image: **Windows 2012**
+#.  Open ``https://*<POCxx-ABC Cluster IP>*:9440`` (https://10.42.xx.37:9440) in your browser and log in with the following credentials:
 
-   a. Click **Add**.
+    - **Username** - admin
+    - **Password** - *your cluster password*
 
-   b. Scroll down to the **Network Adapters (NIC)** section.
+#.  Click the Cluster name in the upper left hand corner to access the Cluster details
 
-#. Select **+ Add New NIC**.
+#.  Enter the Cluster External Data Services IP Address (10.42.xx.38) in your Assigned Cluster details
 
-   a. Select network **Unmanaged Client Network**.
+#.  Close Cluster Details and proceed to Configure Guests
 
-   b. Click **Add**.
+    .. figure:: images/1.png
 
-#. Click **Save** in the **Create VM** dialogue window.
+Enable and Configure Volumes in Prism for Windows
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#. When the virtual machine has been created, click **Power On** to start the virtual machine.
+Ensure that the *initials*-Windows_VM has access to the Network:
 
-Creating a Volume Group for Windows
-................................................
+#.  Login to Prism, navigate to the VM Dashboard, Table View, select *initials*-Windows_VM, and click Update, ensure that the VM has a NIC added, if it does not, add one now and attach it to VLAN0.
 
-In this exercise you will create a volume group in your cluster for your Windows VM. This volume group will contain the iSCSI targets that will be accessed by the Windows iSCSI client (initiator). The iSCSI initiator controls all command and data traffic within an iSCSI configuration.
+    .. figure:: images/2.png
 
-#. If you are not logged into your Prism UI, log on as the **admin** user.
+#.  Save the VM Settings and continue to the next steps.
 
-#. In the upper-left corner of the browser window, click on your cluster name.
+#.  Login to the Windows Server guest VM to get the iSCSI iqn name:
 
-   .. figure:: images/1.png
+#.  Login to *initials*-Windows_VM on your assigned cluster with username “administrator” and your password. Click in the upper right hand corner of the desktop for the search window to appear.  It looks like a looking glass.  Click the Search icon.  Enter iscsi and “iscsi” and it will resolve to “iSCSI Initiator.” Start the Windows iSCSI service.
 
-#. In the **Cluster Details** window, in the **iSCSI DATA SERVICES IP** text box, enter the **Cluster Data Services IP** from **Cluster Configuration Guide**.
+    .. figure:: images/3.png
 
-   .. figure:: images/2.png
+#.  Click the “Configuration” tab to find the iqn.  Make a note of it for a later step.
 
-#. Click **Save**.
+    .. figure:: images/4.png
 
-#. Switch to the **Storage** dashboard.
+#.  Create a Volume Group in Prism:
 
-#. In the upper-right corner of the browser window, click **+ Volume Group**.
+#.  Go back to Prism UI, navigate to the Storage Dashboard, click “+ Volume Group” to create a new Volume Group, in the Volume Group Window give the volume group a name "mywindowsvg", add a new disk and select default container, input a size for the disk of 60 and click Add.
 
-#. In the **Create Volume Group** window, in the **Name** text box enter the name **<your initials>Win-VG**.
+#.  Click Save.
 
-   .. figure:: images/3.png
+    .. figure:: images/5.png
 
-#. In the Create Volume Group window, click **+ Add New Disk**.
+Connect ABS disks to Windows VM:
+................................
 
-#. In the **Add Disk** window, fill out the fields as follows:
+#.  Click the VG again and find the volume group we previously created.  Click on our windows VG and click Update. Under Access Control check the box and add the iqn previously recorded.
 
-   Storage Container: **default-container-#####**
-   Sizer(GiB): 10
+    .. figure:: images/6.png
 
-   .. figure:: images/4.png
+#.  Switch back to your windows VM.  In the console of your windows VM in the iSCSI initiator properties click on the Targets tab.  Type in the data services ip and click Quick Connect.  You will see the target volume group we previously created.
 
-#. Click **Add**.
+    .. figure:: images/7.png
 
-#. Repeat the previous steps one more time to have a total of two disks in the volume group.
+#.  Click Done
 
-   .. Note::
-    Make sure you select the default-container-##### each time you add a disk to the Volume Group, it will not be selected by default.
+#.  Open diskmgmt.msc from the Search menu and see the raw disk we added.  Optionally, click the disk to format and choose drive letter.
 
-#. When you are done, the **Create Volume Group** window should have two 10GB disks listed under **Storage**.
+    .. figure:: images/8.png
 
-   .. figure:: images/5.png
+Enable and Configure ABS in Prism for Linux
+++++++++++++++++++++++++++++++++++++++++++++
 
-#. Click **Save**.
+Ensure that the CentOS VM has access to the Network:
+Login to Prism, navigate to the VM Dashboard, Table View, select the CentOS VM, and click Update, ensure that the VM has a NIC added, if it does not, add one now and attach it to VLAN0. Save the VM Settings and continue to the next steps.
 
-Configuring the Windows VM as an iSCSI Initiator
-........................................................................
+Login to the Linux guest VM to get the iSCSI iqn name:
 
-In this exercise you will configure a **Windows 2012 VM** as an iSCSI initiator. The iSCSI initiator, also known as the iSCSI Client, controls all command and data traffic within an iSCSI configuration.
+#.  Login to CentOS VM on your assigned cluster with
 
-#. Switch to the **VM** dashboard and click the **Table** tab.
+    - Username - root
+    - Password - nutanix/4u
 
-#. Click to select the **<your initials>-iscsi-Win** VM.
+#.  Install ISCSI Tools: If not already installed, run the following command:
 
-#. Click **Launch Console**.
+    .. code-block:: bash
 
-#. Log on to the Windows VM as **Administrator** .(if you are asked to create a new password for the windows please refer to Cluster Configuration Guide for the information)
+      yum –y install iscsi-initiator-utils
 
-#. Click the **four panel Windows** icon in the task bar and click the **magnifying glass** at the upper right.
+#.  Install lsscsi tools: If not already installed, run the following command:
 
-#. In the **search** field type **cmd** and click **Command Prompt** to open a **Command Prompt** window.
+    .. code-block:: bash
 
-#. In the **Command Prompt** window enter the following command:
+     yum –y install lsscsi
 
-   .. code-block:: bash
+#.  To find the iqn name run
 
-    services.msc
+    .. code-block:: bash
 
-#. Scroll down in the **Services** window, right-click **Microsoft iSCSI Initiator Service**, and select **Properties**.
-#. In the **Properties** window, click the **Startup type** drop down menu and select **Automatic**.
+     cat /etc/iscsi/initiatorname.iscsi
 
-   .. figure:: images/6.png
+#.  Copy down the iqn name of the iSCSI client initiator
 
-#. Under **Service Status**, click **Start**.
+    Example:
 
-#. Click **OK** and close the **Services** window.
+    .. figure:: images/10.png
 
-#. In the **Command Prompt** window enter the following command:
 
-   .. code-block:: bash
+Create a Volume Group in Prism:
+++++++++++++++++++++++++++++++++++++++++++++
 
-    firewall.cpl
+#.  Login to Prism
 
-#. In the upper-left corner of the **Windows Firewall** window, click **Allow an app or feature through Windows Firewall**.
+#.  Navigate to the Storage Dashboard
 
-   .. figure:: images/7.png
+#.  Click **+ Volume Group** to create a new Volume Group
 
-#. In the **Allowed Apps** window, under **Allowed apps and features**, scroll down and check the check box to the left of **iSCSI Service**. Check the check box under the **Public** column also.
+#.  In the Volume Group Window give the volume group a name ``mylinuxvg``
 
-   .. figure:: images/8.png
+#.  Add a new disk and select default container, input a size for the disk of 60 and click **Add**
 
-#. Click **OK** and close the **Windows Firewall** window.
+#.  In the Initiators section , click "Add New client", enter the iqn name of the Linux iSCSI initiator you copied down in step 5 of the previous section and click Add.
 
-#. In the **Command Prompt** window enter the following command:
+#.  Then click **Save**
 
-   .. code-block:: bash
+Connect ABS disks to Linux VM:
+..............................
 
-    iscsicpl.exe
+#.  Discover the Nutanix ABS target by running the command
 
-#. Click the **Configuration** tab at the top (right).
+    .. code-block:: bash
 
-#. Click **Change**…
+      iscsiadm -m discovery -t sendtargets -p <DataServicesIP>
+      #It should come back with the iqn name of the Nutanix ABS target volume.  Make note of this name.
 
-#. Enter the following into the **Initiator Name** text box:
+    Example:
 
-   .. code-block:: bash
+    .. figure:: images/11.png
 
-    iqn.1991-05.com.microsoft:win-1
+#.  Run the following command to verify you only see one Nutanix vDisk on ``/dev/``
 
-   .. note::
+    .. code-block:: bash
 
-    You should only have to backspace over the last few characters in the existing name and replace them with the digit 1.
+      lsscsi
 
-   .. figure:: images/9.png
+    .. figure:: images/12.png
 
-#. Click **OK**.
+#.  Now login to the ABS iSCSI LUN with the target iqn you copied from the Step 1 just above.
 
-#. Click **OK** to exit the iSCSI configuration utility.
+    .. code-block:: bash
 
-Configuring a Windows VM for Access to a Volume Group
-........................................................................
+      iscsiadm  --mode node --targetname <Nutanix.iqn.name.from.step.above> --portal <DataServicesIP> --login
 
-In this exercise you will configure your **Windows 2012** virtual machine to discover and access the two virtual disks (targets) in the volume group that you created previously in this lab.
+    .. figure:: images/13.png
 
-#. From the Prism UI, go to the **Storage** dashboard -> **Table -> Volume Group tab**.
+#.  Check the status session of the target by running
 
-#. Select the **<your initials>-Win-VG** volume group and click the **Update** link below the **Volume Group** table.
+    .. code-block:: bash
 
-#. In the **Update Volume Group** dialog box, scroll down and click **+ Add New Client**.
+      iscsiadm --mode session --op show
 
-#. In the **Add iSCSI Client** dialog box, enter the following into the Client IQN/IP Address text box: **iqn.1991-05.com.microsoft:win-1**
+#.  Run the following command again to verify you now see the new Nutanix vDisk on ``/dev/sdb``
 
-#. Double check your entry for typos and click **Add**.
+    .. code-block:: bash
 
-#. Click **Save**.
+      lsscsi
 
-#. Verify the Client IQN in the **VOLUME GROUP DETAILS** panel at the lower left.
+    .. figure:: images/14.png
 
-   .. figure:: images/10.png
+#.  Discover the Nutanix ABS target by running the following commands
 
-#. Return to the console of your **<your initials>-iscsi-Win VM**.
+    .. code-block:: bash
 
-#. In the **Command Prompt** window, enter the following command:
+      iscsiadm --mode discovery –t sendtargets --portal <DataServicesIP>“
+      #It should come back with the iqn name of the Nutanix ABS target volume.  Make note of this name.
 
-   .. code-block:: bash
+    Example:
 
-    iscsicpl.exe
+    .. figure:: images/15.png
 
-#. Click the **Discovery** tab at the top.
+#.  Run the following to verify you only see one Nutanix vdisk on ``/dev/sda``
 
-#. Click **Discover Portal…**
+    .. code-block:: bash
 
-   .. figure:: images/11.png
+      lsscsi
 
-#. In the **Discover Target Portal** window, enter your cluster’s external data services IP address into the **IP address or DNS name** text box. Leave the **Port** field at its default value.
+    .. figure:: images/16.png
 
-   .. Note::
+#.  Now login to the ABS iSCSI LUN with the target iqn you copied from the previous step.
 
-   Your cluster’s external data services IP address can be found on your Cluster Configuration Guide.
+    .. code-block:: bash
 
-   .. figure:: images/12.png
+      iscsiadm  --mode node --targetname <Nutanix.iqn.name.from.step.above> --portal <DataServicesIP> --login
 
-#. Click **OK**.
-#. Click the **Targets** tab.
-#. If you do not see the two targets from the volume group, click **Refresh**.
+    .. figure:: images/17.png
 
-   .. Note::
+#.  Check the status session of the target by running
 
-    The targets will initially display as Inactive.
+    .. code-block:: bash
 
-   .. figure:: images/13.png
+      iscsiadm --mode session --op show
 
-#. Select one of the targets and click **Connect**.
+    .. figure:: images/28.png
 
-#. In the **Connect To Target** dialog box, click **OK**. (if Enable multi-path is not checked, please checked the box before clicking **OK**)
+#.  Run the following command again to verify you now see the new Nutanix vdisk on ``/dev/sdb``
 
-   .. figure:: images/14.png
+    .. code-block:: bash
 
-#. The target you just connected should show a status change from **Inactive** to **Connected**.
+      lsscsi
 
-   .. figure:: images/15.png
+    .. figure:: images/18.png
 
-#. Repeat with the second target.
+Clone Volume Group and Attach to new VM
+++++++++++++++++++++++++++++++++++++++++
 
-#. Click **OK**.
+#.  Navigate to VM Dashboard
 
-#. In the **Command Prompt** window enter the following command:
+#.  Select the Windows VM and Click **Update**
 
-   .. code-block:: bash
+#.  Scroll Down and Make note of the Disks currently attached to VM
 
-    diskmgmt.msc
+#.  Navigate to the Storage Dashboard
 
-#. Scroll down the **Disk Management** window and you should see the two targets listed.
+#.  Select your Volume Group for Windows and Click **Clone**
 
-   .. figure:: images/16.png
+    .. figure:: images/20.png
 
-#. For each disk, right-click the gray box where it shows **Unknown and Offline**. Select **Online**, right-click again and select **Initialize Disk**. In the initialize Disk dialog box, take the defaults and click **OK**.
+#.  Rename the Clone
 
-#. For each disk, right click the open field, marked **10.00GB Unallocated** and select **New Simple Volume**. In the wizard, click **Next** and take the defaults to the summary page and click **Finish**. You should see each disk mounted to a drive letter.
+    .. figure:: images/21.png
 
-#. Close all the windows you have opened in this exercise.
+#.  Click **Save**
+
+#.  Select Volume Group and Click **Update**
+
+    .. figure:: images/22.png
+
+
+#.  Attach the Volume Group Clone to the Windows VM
+
+    .. figure:: images/23.png
+
+
+#.  Select Windows from the Drop down list and click the **Attach** button
+
+#.  Note that Volume Group has been attached to the Windows VM
+
+    .. figure:: images/25.png
+
+#.  Click **Close**
+
+#.  Navigate back to VM Dashboard, Select **Windows Server VM** and click **Update**
+
+#.  Note that the VM now has an additional SCSI Disk attached
+
+#.  Test the new iscsi disk from your Windows VM
+
+    .. figure:: images/27.png
