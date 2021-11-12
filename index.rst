@@ -13,14 +13,6 @@
   examplelab5/examplelab5
   examplelab6/examplelab6
 
-.. toctree::
-  :maxdepth: 2
-  :caption: Cluster Resiliency and Protection
-  :name: _resiliency
-  :hidden:
-
-  examplelab9/examplelab9
-  examplelab10/examplelab10
 
 .. toctree::
   :maxdepth: 2
@@ -32,15 +24,6 @@
   examplelab12/examplelab12
   examplelab13/examplelab13
 
-
-.. toctree::
-  :maxdepth: 2
-  :caption: Cluster Workload Migration
-  :name: _move
-  :hidden:
-
-  examplelab7/examplelab7
-
 .. toctree::
   :maxdepth: 2
   :caption: Nutanix Volumes
@@ -49,25 +32,6 @@
 
   examplelab8/examplelab8
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Era with MSSQL Track
-   :name: _dbs
-   :hidden:
-
-   configure_mssql/configure_mssql
-   admin_mssqldb/admin_mssqldb
-   deploy_mssql_era/deploy_mssql_era
-   webtier/webtier
-   patch_sql/patch_sql
-
-.. .. toctree::
-..   :maxdepth: 2
-..   :caption: Appendix
-..   :name: _appendix
-..   :hidden:
-..
-..   appendix/appendix
 
 .. _getting_started:
 
