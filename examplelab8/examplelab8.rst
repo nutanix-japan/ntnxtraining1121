@@ -147,7 +147,7 @@ Create a Volume Group in Prism:
 
 #.  Add a new disk and select default container, input a size for the disk of 60 and click **Add**
 
-#.  In the Initiators section , click "Add New client", enter the iqn name of the Linux iSCSI initiator you copied down in step 5 of the previous section and click Add.
+#.  In the **Client** section , click "Add New client", enter the iqn name of the Linux iSCSI initiator you copied down in step 5 of the previous section and click **Add**.
 
 #.  Then click **Save**
 
@@ -156,9 +156,12 @@ Connect ABS disks to Linux VM:
 
 #.  Discover the Nutanix ABS target by running the command
 
-    .. code-block:: bash
+#.  Find the <DataServicesIP> from Prism Dashboard by clicking on the cluster name (PHX-POC-xxx) on the top left hand corner and use it in the following command. 
 
+    .. code-block:: bash
+      
       iscsiadm -m discovery -t sendtargets -p <DataServicesIP>
+
       #It should come back with the iqn name of the Nutanix ABS target volume.  Make note of this name.
 
     Example:
@@ -195,48 +198,6 @@ Connect ABS disks to Linux VM:
 
     .. figure:: images/14.png
 
-#.  Discover the Nutanix ABS target by running the following commands
-
-    .. code-block:: bash
-
-      iscsiadm --mode discovery –t sendtargets --portal <DataServicesIP>“
-      #It should come back with the iqn name of the Nutanix ABS target volume.  Make note of this name.
-
-    Example:
-
-    .. figure:: images/15.png
-
-#.  Run the following to verify you only see one Nutanix vdisk on ``/dev/sda``
-
-    .. code-block:: bash
-
-      lsscsi
-
-    .. figure:: images/16.png
-
-#.  Now login to the ABS iSCSI LUN with the target iqn you copied from the previous step.
-
-    .. code-block:: bash
-
-      iscsiadm  --mode node --targetname <Nutanix.iqn.name.from.step.above> --portal <DataServicesIP> --login
-
-    .. figure:: images/17.png
-
-#.  Check the status session of the target by running
-
-    .. code-block:: bash
-
-      iscsiadm --mode session --op show
-
-    .. figure:: images/28.png
-
-#.  Run the following command again to verify you now see the new Nutanix vdisk on ``/dev/sdb``
-
-    .. code-block:: bash
-
-      lsscsi
-
-    .. figure:: images/18.png
 
 Clone Volume Group and Attach to new VM
 ++++++++++++++++++++++++++++++++++++++++
