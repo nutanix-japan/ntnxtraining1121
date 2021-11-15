@@ -40,16 +40,6 @@ Getting Started
 ---------------
 
 
-.. What's New
-.. ++++++++++
-..
-.. - Workshop updated for the following software versions:
-..     - AOS & PC 5.11
-..
-.. - Optional Lab Updates:
-..
-.. - Added :ref:`example_lab_3`
-
 Agenda
 ++++++
 
@@ -67,22 +57,8 @@ AOS Track
    - Nutanix Configuration
    - Deploying and Managing Workloads
    - Security and Compliance
-- Cluster Resiliency and Protection
 - Cluster Management
-- Cluster Workload Migration
 - Nutanix Volumes
-
-Era with MSSQL Track
-......................
-
-.. note::
-
-	Estimated time to complete this track is 2 hours
-
-- Configure MSSQL
-- Admin MSSQL with Era
-- Deploy MSSQL with Era
-- Patching MSSQL
 
 Introductions
 +++++++++++++

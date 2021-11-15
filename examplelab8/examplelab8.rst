@@ -30,9 +30,7 @@ Core use-cases for Acropolis Volumes:
 Lab Setup
 +++++++++
 
-This lab requires applications provisioned as part of the :ref:`windows_tools_vm` and :ref:`linux_tools_vm`.
-
-If you have not yet deployed these VMs, see the linked steps above before proceeding with the lab.
+This lab requires Cent OS VM already provisioned on your cluster.
 
 Configure Acropolis Block Services
 ++++++++++++++++++++++++++++++++++++++++++++
