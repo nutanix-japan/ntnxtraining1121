@@ -75,7 +75,7 @@ Initial Setup
 Cluster assignment
 ++++++++++++++++++
 
-Your cluster assignments can be found in `Lookup <http://lookup-apac.ntnxworkshops.com/>`_. Enter your registered email address to find your details
+Your cluster assignments can be found in `Lookup <https://ntnxapj.tech/cluster-lookup>`_. Enter your registered email address to find your details
 
 .. .. note::
 ..   If these are Single Node Clusters (SNCs) pay close attention on the networking part. The SNCs are completely different setup and configured compared to the "normal" three/four node clusters
